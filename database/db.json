@@ -1,0 +1,123 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "admin",
+            "password": "admin",
+            "email": ""
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "iPhone 15 Pro Max 256 GB",
+            "price": 89.999,
+            "discountPercentage": 12,
+            "discountEndDate": "2021-01-14",
+            "stock": 40,
+            "bestOffer": false,
+            "bestSeller": false,
+            "newArrival": false,
+            "shoppingCredit": true,
+            "freeShipping": true,
+            "fastDelivery": true,
+            "payWithInvoice": false,
+            "installmentInvoice": false,
+            "limitedSelling": false,
+            "image": "",
+            "color": ["Mavi Titanyum", "Siyah Titanyum", "Beyaz Titanyum", "Natürel Titanyum"],
+            "credit": true,
+            "creditMonth": 3,
+            "creditPrice": "33.373.23",
+            "description": "",
+            "category": "cep-telefonu",
+            "subCategory": "ios-telefonlar",
+            "rating": 4.9,
+            "addingDate": "2021-01-14",
+            "edittedDate": "2021-01-14",
+            "seller": "Turkcell Satış A.Ş.",
+            "detailText": "Akıllı telefonlar teknolojik ilerlemeyle üst düzey özelliklerle tasarlanır. Bu alanda önemli yere sahip Apple telefonlar, yeni modelleriyle teknolojiyi zirveye taşır. Türünün son örneği olan iPhone 15 Pro Max 256 GB özellik ve tasarımıyla önemli güncellemeleri getirir. Fotoğraf, video, oyun ve çeşitli uygulamalarda kusursuz performans gösteren telefon, her işlemi kolayca yapar. 256 GB’lık depolama alanı da standart kullanım için kusursuz seçenek sunar. Yenilenen tüm özellikleri ile iPhone 15 Pro Max’in dünyasına adım alabilirsiniz.",
+            "explanation": [
+            {
+                "title": "A17 Pro. Ezber bozan bir çip. Çığır açan bir performans.",
+                "text": "Apple GPU’ları tarihindeki en büyük tasarım yeniliğine hazır mısınız? Tamamen yeni bir iPhone çip sınıfı olan A17 Pro, şimdiye kadarki en iyi grafik performansımızı sunuyor. Hem de açık ara.",
+                "image": " url"
+            },
+            {
+                "title": "Apple GPU’ları tarihindeki en büyük tasarım yeniliğine hazır mısınız? Tamamen yeni bir iPhone çip sınıfı olan A17 Pro, şimdiye kadarki en iyi grafik performansımızı sunuyor. Hem de açık ara.",
+                "text": "iPhone 15 Pro havacılık ve uzay endüstrisi standartlarında titanyum tasarıma sahip ilk iPhone. Öyle ki, Mars görevlerindeki uzay araçlarında da aynı alaşım kullanılıyor.",
+                "image": "url"
+            }],
+            "details": {
+                "model": "iPhone 15 Pro Max",
+                "storage": "256 GB",
+                "screenSize": "6.7 inç",
+                "screenResolution": "2778 x 1284",
+                "processor": "Apple A15 Bionic",
+                "ram": "8 GB",
+                "battery": "4352 mAh",
+                "camera": "12 MP + 12 MP + 12 MP",
+                "frontCamera": "12 MP",
+                "operatingSystem": "iOS 15",
+                "simCard": "Nano SIM",
+                "network": "5G",
+                "weight": "238 g",
+                "dimensions": "160.8 x 78.1 x 7.65 mm",
+                "waterproof": "IP68",
+                "dualSim": "Var",
+                "warranty": "2 Yıl"
+            },
+            "comments": [
+                {
+                    "id": 1,
+                    "userId": 1,
+                    "userName": "Ahmet",
+                    "comment": "Harika bir telefon",
+                    "rating": 5,
+                    "like" : 0,
+                    "date": "2021-01-14"
+                }
+            ],
+            "questions": [
+                {
+                    "id": 1,
+                    "userId": 1,
+                    "userName": "Ahmet",
+                    "question": "Telefonun kamerası kaç megapiksel?",
+                    "answer": "12 MP",
+                    "answerBy": "MARMARA STORE - Turkcell Mağazası",
+                    "date": "2021-01-14"
+                }
+            ]
+        }
+    ],
+    "campaigns": [
+        {
+            "id": 1,
+            "name": "%0 Faiz ile Alışveriş Burada!",
+            "description": "7.500 TL’ye kadar olan alışverişinde 3 ay vade %0 faiz imkânı; 70.000 TL’ye kadar olan alışverişinde ise uygun faiz oranlarıyla 24 ay taksit seçenekleri seni bekliyor!",
+            "image": "url",
+            "startDate": "2021-01-14",
+            "endDate": "2021-01-31"
+        },
+        {
+            "id": 2,
+            "name": "Turkcell Faturasıyla Ödeyen Kazanıyor",
+            "description": "Pasaj alışverişinizi Turkcell faturanızla ödeyin, 250 TL'ye varan hediye kazanın!",
+            "image": "url",
+            "startDate": "2021-01-14",
+            "endDate": "2021-01-31"
+        }
+    ],
+    "sellers" : [
+        {
+            "id": 1,
+            "name": "Turkcell Satış A.Ş.",
+            "point": 10,
+            "comment": "Turkcell'in resmi satış mağazasıdır.",
+            "phone": "0850 455 0 532",
+            "email": "mail@mail.com",
+            "address": "İstanbul"
+        }
+    ]
+}
