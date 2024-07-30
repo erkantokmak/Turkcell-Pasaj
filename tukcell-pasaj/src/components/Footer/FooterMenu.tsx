@@ -130,7 +130,7 @@ const FooterMenu = () => {
   };
 
   return (
-    <Grid columns={6} padding='70px 0 0 0'>
+    <Grid columns={6} padding='70px 0 30px 0'>
       <GridColumn>
         <FooterTitle>Hakkımızda</FooterTitle>
         <FooterMenus>

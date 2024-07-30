@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
@@ -32,6 +33,15 @@ interface GridProps {
     columns?: number;
     gap?: string;
     padding?: string;
+}
+
+interface TitleProps {
+    fsize?: string;
+    fcolor?: string;
+    fweight?: string;
+    family?: string;
+    lineHeight?: string;
+    letterSpacing?: string;
 }
 
 export const Container = styled.div`
@@ -88,8 +98,26 @@ max-width: 100%;
 padding: 0 .625rem;
 `;
 
+export const SocialIcon = styled(Link)`
+color: #fff;
+text-decoration: none;
+cursor: pointer;
+`;
 
+export const Title = styled.h3<TitleProps>`
+font-size: ${(props) => props.fsize ? props.fsize : '1rem'};
+color: ${(props) => props.fcolor ? props.fcolor : '#000'};
+font-weight: ${(props) => props.fweight ? props.fweight : '500'};
+line-height: ${(props) => props.lineHeight ? props.lineHeight : '1.5rem'};
+font-family: ${(props) => props.family ? props.family : 'inherit'};
+letter-spacing: ${(props) => props.letterSpacing ? props.letterSpacing : '0px'};
+`;
 
+export const StyledHr = styled.hr`
+border-bottom: 2px solid #fff;
+margin:0 auto;
+opacity: .1;
+`;
 
 
 

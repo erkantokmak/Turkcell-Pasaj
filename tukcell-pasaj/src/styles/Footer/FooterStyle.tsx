@@ -40,3 +40,19 @@ border: none;
 text-decoration: underline;
 color: #fff;
 `;
+
+export const LanguageSelect = styled.p`
+text-decoration: none;
+color: rgba(255, 255, 255, 0.5);
+cursor: pointer;
+margin: 0px 22px 0 0;
+&:hover {
+text-decoration: underline;
+color: #fff;
+}
+&.active {
+color: #fff;
+text-decoration: underline;
+}
+
+`;
