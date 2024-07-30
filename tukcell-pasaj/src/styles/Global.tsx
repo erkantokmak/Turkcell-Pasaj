@@ -28,6 +28,12 @@ interface ImageProps {
     height?: string;
 }
 
+interface GridProps {
+    columns?: number;
+    gap?: string;
+    padding?: string;
+}
+
 export const Container = styled.div`
 max-width: 1200px;
 padding: 0 10px;
@@ -68,6 +74,19 @@ width: ${(props) => props.width ? props.width : ''};
 height: ${(props) => props.height ? props.height : ''};
 `;
 
+export const Grid = styled.div<GridProps>`
+display: grid;
+grid-template-columns: repeat(${(props) => props.columns ? props.columns : 3}, 1fr);
+gap: ${(props) => props.gap ? props.gap : '0px'};
+padding: ${(props) => props.padding ? props.padding : '0px'};
+`;
+
+export const GridColumn = styled.div`
+flex-basis: 0;
+flex-grow: 1;
+max-width: 100%;
+padding: 0 .625rem;
+`;
 
 
 

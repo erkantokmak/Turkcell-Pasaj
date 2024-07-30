@@ -110,17 +110,6 @@ const Menu = () => {
             }
         }
     };
-    // const menuItems: { [key: string]: string } = {
-    //     "cep-telefonu": "Cep Telefonu-Aksesuar",
-    //     "bilgisayar-tablet": "Bilgisayar-Tablet",
-    //     "elektrikli-ev-aletleri": "Elektrikli Ev Aletleri",
-    //     "beyaz-esya": "Beyaz Eşya",
-    //     "saglik-kisisel-bakim": "Sağlık-Kişisel Bakım",
-    //     "hobi-oyun": "Hobi-Oyun",
-    //     "tv-ses-sistemleri": "TV-Ses Sistemleri",
-    //     "ev-yasam": "Ev-Yaşam",
-    //     "anne-bebek-oyuncak": "Anne-Bebek-Oyuncak"
-    // };
     return (
         <Row className='menu'>
             {Object.entries(menuItems).map(([key, value]) => (
@@ -135,12 +124,6 @@ const Menu = () => {
                     )}
                 </div>
             ))}
-            {/*             
-            {Object.entries(menuItems).map(([key, value]) => (
-                <MenuItem key={key} href={key}>
-                    {value}
-                </MenuItem>
-            ))} */}
         </Row>
     );
 }
