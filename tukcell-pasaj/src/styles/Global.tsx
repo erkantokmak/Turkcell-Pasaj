@@ -27,6 +27,7 @@ interface Props {
 interface ImageProps {
     width?: string;
     height?: string;
+    radius?: string;
 }
 
 interface GridProps {
@@ -81,8 +82,11 @@ gap: ${(props) => props.gap ? props.gap : '0px'};
 
 export const ImageWrapper = styled.div<ImageProps>`
 position: relative;
+overflow: hidden;
+display: inline-block;
 width: ${(props) => props.width ? props.width : ''};
 height: ${(props) => props.height ? props.height : ''};
+border-radius: ${(props) => props.radius ? props.radius : '0px'};
 `;
 
 export const Grid = styled.div<GridProps>`
