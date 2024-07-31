@@ -1,6 +1,17 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import Slider from "@/components/Homepage/Slider";
+import { Container } from "@/styles/Global";
+import PopularCategory from "@/components/Homepage/PopularCategory";
+import Banner from "@/components/Homepage/Banner";
+import BestOffer from "@/components/Homepage/BestOffer";
+import Campaigns from "@/components/Homepage/Campaigns";
+import BestSellers from "@/components/Homepage/BestSellers";
+import Opportunities from "@/components/Homepage/Opportunities";
+import PasajNews from "@/components/Homepage/PasajNews";
+import LastViews from "@/components/Homepage/LastViews";
+import WhyPasaj from "@/components/Homepage/WhyPasaj";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -14,8 +25,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        Home Page
+      <main>
+        <Slider />
+        <Container>
+          <PopularCategory />
+          <Banner />
+          <BestOffer />
+          <Campaigns />
+          <BestSellers />
+          <Opportunities />
+          <PasajNews />
+          <LastViews />
+          <WhyPasaj />
+        </Container>
       </main>
     </>
   );

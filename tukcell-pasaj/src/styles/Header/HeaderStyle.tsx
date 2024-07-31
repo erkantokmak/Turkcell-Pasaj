@@ -102,7 +102,7 @@ export const SubMenu = styled.div`
   width: 100%;
   min-height: 590px;
   background-color: white;
-  z-index: 1;
+  z-index: 3;
   .menuItem:hover & {
     display: block;
   }

@@ -42,6 +42,7 @@ interface TitleProps {
     family?: string;
     lineHeight?: string;
     letterSpacing?: string;
+    textAlign?: string;
 }
 
 export const Container = styled.div`
@@ -86,9 +87,15 @@ height: ${(props) => props.height ? props.height : ''};
 
 export const Grid = styled.div<GridProps>`
 display: grid;
-grid-template-columns: repeat(${(props) => props.columns ? props.columns : 3}, 1fr);
+grid-template-columns: repeat(${(props) => props.columns ? props.columns : 6}, 1fr);
 gap: ${(props) => props.gap ? props.gap : '0px'};
 padding: ${(props) => props.padding ? props.padding : '0px'};
+@media (max-width: 768px) {
+grid-template-columns: repeat(${(props) => props.columns ? props.columns/2 : 3}, 1fr);
+}
+@media (max-width: 456px) {
+grid-template-columns: repeat(${(props) => props.columns ? props.columns/3 : 2}, 1fr);
+}
 `;
 
 export const GridColumn = styled.div`
@@ -111,6 +118,7 @@ font-weight: ${(props) => props.fweight ? props.fweight : '500'};
 line-height: ${(props) => props.lineHeight ? props.lineHeight : '1.5rem'};
 font-family: ${(props) => props.family ? props.family : 'inherit'};
 letter-spacing: ${(props) => props.letterSpacing ? props.letterSpacing : '0px'};
+text-align: ${(props) => props.textAlign ? props.textAlign : 'center'};
 `;
 
 export const StyledHr = styled.hr`
