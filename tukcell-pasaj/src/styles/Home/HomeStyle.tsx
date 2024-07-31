@@ -24,3 +24,17 @@ padding: 0px 2rem;
 border-radius: .625rem;
 border: 7px solid #fffa
 `;
+
+export const WhyIcon = styled.div`
+background-color: #27356f;
+color: #fff;
+font-size: 45px;
+border-radius: 50%;
+margin-bottom: 25px;
+overflow: hidden;
+width: 100px;
+height: 100px;
+display: flex;
+align-items: center;
+justify-content: center;
+`;

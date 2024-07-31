@@ -44,6 +44,7 @@ interface TitleProps {
     lineHeight?: string;
     letterSpacing?: string;
     textAlign?: string;
+    margin?: string;
 }
 
 export const Container = styled.div`
@@ -123,6 +124,7 @@ line-height: ${(props) => props.lineHeight ? props.lineHeight : '1.5rem'};
 font-family: ${(props) => props.family ? props.family : 'inherit'};
 letter-spacing: ${(props) => props.letterSpacing ? props.letterSpacing : '0px'};
 text-align: ${(props) => props.textAlign ? props.textAlign : 'center'};
+margin: ${(props) => props.margin ? props.margin : '0px'};
 `;
 
 export const StyledHr = styled.hr`
@@ -147,5 +149,9 @@ transition: background-color .3s;
 background-color: #ffd917;
 }
 `;
-
-
+interface BackgroundProps {
+    bgColor?: string;
+}
+export const BackgroundColor = styled.div<BackgroundProps>`
+background-color: ${(props) => props.bgColor ? props.bgColor : '#fff'};
+`;

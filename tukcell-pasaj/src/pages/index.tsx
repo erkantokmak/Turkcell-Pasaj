@@ -12,9 +12,10 @@ import Opportunities from "@/components/Homepage/Opportunities";
 import PasajNews from "@/components/Homepage/PasajNews";
 import LastViews from "@/components/Homepage/LastViews";
 import WhyPasaj from "@/components/Homepage/WhyPasaj";
+import localFont from 'next/font/local'
 
+const Greycliff = localFont({ src: './GreycliffCF-Medium.woff2' })
 
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -25,7 +26,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className={Greycliff.className}>
         <Slider />
         <Container>
           <PopularCategory />
@@ -36,8 +37,8 @@ export default function Home() {
           <Opportunities />
           <PasajNews />
           <LastViews />
-          <WhyPasaj />
         </Container>
+          <WhyPasaj />
       </main>
     </>
   );

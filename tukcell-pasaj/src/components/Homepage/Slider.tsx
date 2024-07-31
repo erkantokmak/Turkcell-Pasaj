@@ -81,7 +81,6 @@ const Slider = () => {
 
         <SliderContainer>
             <Row>
-
                 <SliderBackground background={swiper} />
                 <Container>
                     <Swiper
