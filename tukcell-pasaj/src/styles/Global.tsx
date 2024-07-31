@@ -127,6 +127,21 @@ margin:0 auto;
 opacity: .1;
 `;
 
-
+export const YellowButton = styled.button`
+border-radius: 50px;
+background-color: #FFC900;
+color: #000;
+padding: 16px;
+cursor: pointer;
+border: none;
+display: flex;
+gap: 30px;
+align-items: center;
+justify-content: space-between;
+transition: background-color .3s;
+&:hover {
+background-color: #ffd917;
+}
+`;
 
 
