@@ -11,7 +11,7 @@ const Campaigns = () => {
                 </Title>
             </Row>
             <Row padding='0 0 50px 0 '>
-                <Column>
+                <Column gap='20px'>
                     <ImageWrapper width='780px' height='280px'>
                         <Image src="/images/banners/36aytaksit-kampanyalar-yatay-webx.webp" alt='36 ay taksit kampanyalar' fill objectFit='contain' />
                     </ImageWrapper>
