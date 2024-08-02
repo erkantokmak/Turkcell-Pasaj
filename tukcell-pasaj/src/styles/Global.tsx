@@ -59,6 +59,9 @@ margin: 0 auto;
     max-width: 456px;
     padding: 0 20px;
 }
+.text-line {
+text-decoration: line-through;
+}
 `;
 
 export const Row = styled.div<Props>`

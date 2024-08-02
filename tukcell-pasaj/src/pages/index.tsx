@@ -13,6 +13,7 @@ import PasajNews from "@/components/Homepage/PasajNews";
 import LastViews from "@/components/Homepage/LastViews";
 import WhyPasaj from "@/components/Homepage/WhyPasaj";
 import localFont from 'next/font/local'
+import SingleProduct from "@/components/Products/SingleProduct";
 
 const Greycliff = localFont({ src: './GreycliffCF-Medium.woff2' })
 
