@@ -2,8 +2,12 @@ import { Row, Title } from '@/styles/Global'
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SingleProduct from '../Products/SingleProduct'
+import { Product } from '@/types/product'
 
-const LastViews = () => {
+type LastViewsProps = {
+  data: Product[]
+}
+const LastViews: React.FC<LastViewsProps> = ({data}) => {
   return (
     <>
       <Row justifyContent='start' padding='50px 0 0 0'>
@@ -16,18 +20,13 @@ const LastViews = () => {
           spaceBetween={10}
           slidesPerView={4}
         >
-          <SwiperSlide>
-            <SingleProduct />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleProduct />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleProduct />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleProduct />
-          </SwiperSlide>
+          {
+            data.slice(0,4)
+              .map((product: Product, index: number) => (
+                <SwiperSlide key={index}>
+                  <SingleProduct product={product} />
+                </SwiperSlide>
+              ))}
         </Swiper>
       </Row>
     </>

@@ -6,12 +6,21 @@ import { FaRegHeart } from 'react-icons/fa6'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import { Rating } from '@smastrom/react-rating'
 import { Pagination } from 'swiper/modules'
+import { Product } from '@/types/product'
 
-const SingleProduct = () => {
+type SingleProductProps = {
+    product: Product
+}
+
+const SingleProduct: React.FC<SingleProductProps> = ({ product }) => {
     return (
         <ProductWrapper>
             <ProductContent>
-                <ProductTag fsize='12px' fcolor='#fff' bgColor='#00e90a'>Çok Satanlar</ProductTag>
+                {
+                    product?.bestSeller && (
+                        <ProductTag fsize='12px' fcolor='#fff' bgColor='#00e90a'>Çok Satanlar</ProductTag>
+                    )
+                }
                 <Row justifyContent='flex-end'>
                     <FavIcon>
                         <FaRegHeart />
@@ -23,27 +32,21 @@ const SingleProduct = () => {
                         modules={[Pagination]}
                         pagination={{ clickable: true }}
                     >
-                        <SwiperSlide>
-                            <ImageWrapper width='248px' height='186px'>
-                                <Image src='/images/products/iphone-15-pro-max.webp' layout='fill' objectFit='contain' alt='Product Image' />
-                            </ImageWrapper>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <ImageWrapper width='248px' height='186px'>
-                                <Image src='/images/products/iphone-15-pro-max1.webp' layout='fill' objectFit='contain' alt='Product Image' />
-                            </ImageWrapper>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <ImageWrapper width='248px' height='186px'>
-                                <Image src='/images/products/iphone-15-pro-max2.webp' layout='fill' objectFit='contain' alt='Product Image' />
-                            </ImageWrapper>
-                        </SwiperSlide>
+                        {
+                            product?.image.map((image, index)=> (
+                                <SwiperSlide key={index}>
+                                    <ImageWrapper width='248px' height='186px'>
+                                        <Image src={`/images/products/${image.imgUrl}`} layout='fill' objectFit='contain' alt='Product Image' />
+                                    </ImageWrapper>
+                                </SwiperSlide>
+                            ))
+                        }
                     </Swiper>
 
                 </Row>
 
                 <Title fsize='18px' fcolor='#253342' fweight='700' lineHeight='1.22' textAlign='start'>
-                    Iphone 15 Pro Max
+                    {product?.name}
                 </Title>
                 <Row justifyContent='flex-start' padding='15px 0'>
                     <Rating
@@ -53,36 +56,68 @@ const SingleProduct = () => {
                         readOnly
                     />
                     <Title fsize='10px' fcolor='#253342' fweight='500' lineHeight='1' textAlign='start' margin='0 0 0 5px'>
-                        4.7
+                        {product?.rating}
                     </Title>
                 </Row>
                 <Row gap='5px' justifyContent='flex-start'>
-                    <ColoredInfo fsize='9px' bgColor='#00e90a1a' fcolor='#5f6b76' >
-                        Faturana Ek 36 Taksit
-                    </ColoredInfo>
-                    <ColoredInfo fsize='9px' bgColor='#E5F8FF' fcolor='#5f6b76'>
-                        Info 1
-                    </ColoredInfo>
-                    <ColoredInfo fsize='9px' bgColor='#FDF7E7' fcolor='#5f6b76'>
-                        Info 1
-                    </ColoredInfo>
+                    {
+                        product?.shoppingCredit && (
+                            <ColoredInfo fsize='9px' bgColor='#00e90a1a' fcolor='#5f6b76' >
+                                Faturana Ek 36 Taksit
+                            </ColoredInfo>
+                        )
+                    }
+                    {
+                        product?.freeShipping && (
+                            <ColoredInfo fsize='9px' bgColor='#E5F8FF' fcolor='#5f6b76'>
+                                Ücretsiz Kargo
+                            </ColoredInfo>
+                        )
+                    }
+                    {
+                        product?.fastDelivery && (
+                            <ColoredInfo fsize='9px' bgColor='#FDF7E7' fcolor='#5f6b76'>
+                                Hızlı Gönderim
+                            </ColoredInfo>
+                        )
+                    }
                 </Row>
             </ProductContent>
             <PriceSection>
-                <Title fsize='18px' fcolor='#2855AC' fweight='700' lineHeight='1' textAlign='start'>
-                    12.999,99 TL
-                </Title>
+                {
+                    product?.discountPercentage > 0 ? (
+                        <Title fsize='18px' fcolor='#2855AC' fweight='700' lineHeight='1' textAlign='start'>
+                            {product?.price * ((100 - product?.discountPercentage) / 100)}
+                        </Title>
+                    ) : (
+                        <Title fsize='18px' fcolor='#2855AC' fweight='700' lineHeight='1' textAlign='start'>
+                            {product?.price}
+                        </Title>
+                    )
+                }
                 <Row gap='5px'>
-                    <Title className='text-line' fsize='12px' fcolor='#5F6B7666' fweight='700' >
-                        15.999,99 TL
-                    </Title>
-                    <Title fsize='12px' fcolor='#00BAFC' fweight='700' >
-                        1000 TL indirim
-                    </Title>
+                    {
+                        product?.discountPercentage > 0 ? (
+                            <Title className='text-line' fsize='12px' fcolor='#5F6B7666' fweight='700' >
+                                {product?.price}
+                            </Title>
+                        ) : <Title></Title>
+                    }
+                    {
+                        product?.discountPercentage > 0 && (
+                            <Title fsize='12px' fcolor='#00BAFC' fweight='700' >
+                                {product.price * (product.discountPercentage / 100)} TL indirim
+                            </Title>
+                        )
+                    }
                 </Row>
-                <Title fsize='10px' fcolor='#29C32E' fweight='700' lineHeight='1'>
-                    Son 30 Günün en düşük fiyatı!
-                </Title>
+                {
+                    product?.discountPercentage > 0 && (
+                        <Title fsize='10px' fcolor='#29C32E' fweight='700' lineHeight='1'>
+                            Son 30 Günün en düşük fiyatı!
+                        </Title>
+                    )
+                }
             </PriceSection>
         </ProductWrapper >
     )

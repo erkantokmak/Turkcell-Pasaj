@@ -2,8 +2,13 @@ import { Row, Title } from '@/styles/Global'
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SingleProduct from '../Products/SingleProduct'
+import { Product } from '@/types/product'
 
-const PasajNews = () => {
+type PasajNewsProps = {
+  data: Product[]
+}
+
+const PasajNews: React.FC<PasajNewsProps> = ({data}) => {
   return (
     <>
       <Row justifyContent='start' padding='50px 0 0 0'>
@@ -16,18 +21,13 @@ const PasajNews = () => {
           spaceBetween={10}
           slidesPerView={4}
         >
-          <SwiperSlide>
-            <SingleProduct />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleProduct />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleProduct />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleProduct />
-          </SwiperSlide>
+           {
+            data.filter((product: Product) => product.newArrival === true)
+              .map((product: Product, index: number) => (
+                <SwiperSlide key={index}>
+                  <SingleProduct product={product} />
+                </SwiperSlide>
+              ))}
         </Swiper>
       </Row>
     </>

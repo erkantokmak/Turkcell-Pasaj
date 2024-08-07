@@ -3,6 +3,7 @@ import TopHeader from './TopHeader'
 import MidHeader from './MidHeader'
 import Menu from './Menu'
 import { Container } from '@/styles/Global'
+import Breadcumb from './Breadcumb'
 
 const index = () => {
     return (
@@ -11,6 +12,7 @@ const index = () => {
                 <TopHeader />
                 <MidHeader />
                 <Menu />
+                <Breadcumb />
             </Container>
 
         </>

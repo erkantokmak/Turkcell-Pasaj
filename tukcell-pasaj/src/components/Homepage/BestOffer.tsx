@@ -2,8 +2,14 @@ import { Row, Title } from '@/styles/Global'
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SingleProduct from '../Products/SingleProduct'
+import { Product } from '@/types/product'
 
-const BestOffer = () => {
+type BestOfferProps = {
+  data: Product[]
+}
+
+const BestOffer: React.FC<BestOfferProps> = ({ data }) => {
+  console.log(data)
   return (
     <>
       <Row justifyContent='start' padding='50px 0 0 0'>
@@ -16,18 +22,13 @@ const BestOffer = () => {
           spaceBetween={10}
           slidesPerView={4}
         >
-          <SwiperSlide>
-            <SingleProduct />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleProduct />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleProduct />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SingleProduct />
-          </SwiperSlide>
+          {
+            data.filter((product: Product) => product.bestOffer === true)
+              .map((product: Product, index: number) => (
+                <SwiperSlide key={index}>
+                  <SingleProduct product={product} />
+                </SwiperSlide>
+              ))}
         </Swiper>
       </Row>
     </>

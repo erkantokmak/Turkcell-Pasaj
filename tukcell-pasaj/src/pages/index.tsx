@@ -13,12 +13,34 @@ import PasajNews from "@/components/Homepage/PasajNews";
 import LastViews from "@/components/Homepage/LastViews";
 import WhyPasaj from "@/components/Homepage/WhyPasaj";
 import localFont from 'next/font/local'
-import SingleProduct from "@/components/Products/SingleProduct";
+import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
+import { fetchAllProducts } from "@/lib/server";
 
 const Greycliff = localFont({ src: './GreycliffCF-Medium.woff2' })
 
 
+export const getStaticProps = async () => {
+  const queryclient = new QueryClient();
+  await queryclient.prefetchQuery(
+  { queryKey: ['products'],
+    queryFn: fetchAllProducts,}
+  );
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryclient),
+    }
+  }
+}
+
 export default function Home() {
+
+  const { data } = useQuery({
+    queryKey: ["products"],
+    queryFn: fetchAllProducts,
+  });
+  console.log(data)
+
   return (
     <>
       <Head>
@@ -32,12 +54,12 @@ export default function Home() {
         <Container>
           <PopularCategory />
           <Banner />
-          <BestOffer />
+          <BestOffer data={data} />
           <Campaigns />
-          <BestSellers />
+          <BestSellers data={data}/>
           <Opportunities />
-          <PasajNews />
-          <LastViews />
+          <PasajNews data={data}/>
+          <LastViews data={data}/>
         </Container>
           <WhyPasaj />
       </main>

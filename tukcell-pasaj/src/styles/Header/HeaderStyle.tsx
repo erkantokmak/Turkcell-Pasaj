@@ -25,7 +25,6 @@ top: 50%;
 left: 15px;
 transform: translateY(-50%);
 color: gray;
-
 `;
 
 export const SearchBar = styled.input`

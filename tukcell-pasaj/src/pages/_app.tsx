@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { dehydrate, HydrationBoundary, QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import type { AppProps } from "next/app";
 import Header from "@/components/Header";
@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import '@smastrom/react-rating/style.css'
 
- const queryClient = new QueryClient({
+const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       staleTime: 60 * 1000,
@@ -24,10 +24,12 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
-      <GlobalStyles />
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
+      <HydrationBoundary state={pageProps.dehydratedState }>
+        <GlobalStyles />
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+      </HydrationBoundary>
     </QueryClientProvider >
   );
 }

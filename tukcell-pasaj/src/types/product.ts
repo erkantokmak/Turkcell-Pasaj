@@ -44,7 +44,11 @@ interface Explanation {
     image: string;
 }
 
-interface Product {
+interface Image {
+    imgUrl: string;
+}
+
+export type Product = {
     id: number,
     name: string,
     price: number,
@@ -60,7 +64,7 @@ interface Product {
     payWithInvoice: boolean,
     installmentInvoice: boolean,
     limitedSelling: boolean,
-    image: Array<string>,
+    image: Image[],
     color: Array<string>,
     credit: boolean,
     creditMonth: number,
