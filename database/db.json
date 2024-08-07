@@ -15,7 +15,7 @@
             "discountPercentage": 12,
             "discountEndDate": "2021-01-14",
             "stock": 40,
-            "bestOffer": false,
+            "bestOffer": true,
             "bestSeller": false,
             "newArrival": false,
             "shoppingCredit": true,
@@ -24,8 +24,59 @@
             "payWithInvoice": false,
             "installmentInvoice": false,
             "limitedSelling": false,
-            "image": "",
-            "color": ["Mavi Titanyum", "Siyah Titanyum", "Beyaz Titanyum", "Natürel Titanyum"],
+            "image": [
+                {
+                    "imgUrl": "iphone-15-pro-max.webp"
+                },
+                {
+                    "imgUrl": "iphone-15-pro-max2.webp"
+                },
+                {
+                    "imgUrl": "iphone-15-pro-max3.webp"
+                },
+                {
+                    "imgUrl": "iphone-15-pro-max4.webp"
+                },
+                {
+                    "imgUrl": "iphone-15-pro-max5.webp"
+                },
+                {
+                    "imgUrl": "iphone-15-pro-max6.webp"
+                },
+                {
+                    "imgUrl": "iphone-15-pro-max7.webp"
+                },
+                {
+                    "imgUrl": "iphone-15-pro-max8.webp"
+                },
+                {
+                    "imgUrl": "iphone-15-pro-max9.webp"
+                },
+                {
+                    "imgUrl": "iphone-15-pro-max10.webp"
+                },
+                {
+                    "imgUrl": "iphone-15-pro-max11.webp"
+                },
+                {
+                    "imgUrl": "iphone-15-pro-max12.webp"
+                },
+                {
+                    "imgUrl": "iphone-15-pro-max13.webp"
+                },
+                {
+                    "imgUrl": "iphone-15-pro-max14.webp"
+                },
+                {
+                    "imgUrl": "iphone-15-pro-max15.webp"
+                }
+            ],
+            "color": [
+                "Mavi Titanyum",
+                "Siyah Titanyum",
+                "Beyaz Titanyum",
+                "Natürel Titanyum"
+            ],
             "credit": true,
             "creditMonth": 3,
             "creditPrice": "33.373.23",
@@ -38,16 +89,17 @@
             "seller": "Turkcell Satış A.Ş.",
             "detailText": "Akıllı telefonlar teknolojik ilerlemeyle üst düzey özelliklerle tasarlanır. Bu alanda önemli yere sahip Apple telefonlar, yeni modelleriyle teknolojiyi zirveye taşır. Türünün son örneği olan iPhone 15 Pro Max 256 GB özellik ve tasarımıyla önemli güncellemeleri getirir. Fotoğraf, video, oyun ve çeşitli uygulamalarda kusursuz performans gösteren telefon, her işlemi kolayca yapar. 256 GB’lık depolama alanı da standart kullanım için kusursuz seçenek sunar. Yenilenen tüm özellikleri ile iPhone 15 Pro Max’in dünyasına adım alabilirsiniz.",
             "explanation": [
-            {
-                "title": "A17 Pro. Ezber bozan bir çip. Çığır açan bir performans.",
-                "text": "Apple GPU’ları tarihindeki en büyük tasarım yeniliğine hazır mısınız? Tamamen yeni bir iPhone çip sınıfı olan A17 Pro, şimdiye kadarki en iyi grafik performansımızı sunuyor. Hem de açık ara.",
-                "image": " url"
-            },
-            {
-                "title": "Apple GPU’ları tarihindeki en büyük tasarım yeniliğine hazır mısınız? Tamamen yeni bir iPhone çip sınıfı olan A17 Pro, şimdiye kadarki en iyi grafik performansımızı sunuyor. Hem de açık ara.",
-                "text": "iPhone 15 Pro havacılık ve uzay endüstrisi standartlarında titanyum tasarıma sahip ilk iPhone. Öyle ki, Mars görevlerindeki uzay araçlarında da aynı alaşım kullanılıyor.",
-                "image": "url"
-            }],
+                {
+                    "title": "A17 Pro. Ezber bozan bir çip. Çığır açan bir performans.",
+                    "text": "Apple GPU’ları tarihindeki en büyük tasarım yeniliğine hazır mısınız? Tamamen yeni bir iPhone çip sınıfı olan A17 Pro, şimdiye kadarki en iyi grafik performansımızı sunuyor. Hem de açık ara.",
+                    "image": " url"
+                },
+                {
+                    "title": "Apple GPU’ları tarihindeki en büyük tasarım yeniliğine hazır mısınız? Tamamen yeni bir iPhone çip sınıfı olan A17 Pro, şimdiye kadarki en iyi grafik performansımızı sunuyor. Hem de açık ara.",
+                    "text": "iPhone 15 Pro havacılık ve uzay endüstrisi standartlarında titanyum tasarıma sahip ilk iPhone. Öyle ki, Mars görevlerindeki uzay araçlarında da aynı alaşım kullanılıyor.",
+                    "image": "url"
+                }
+            ],
             "details": {
                 "model": "iPhone 15 Pro Max",
                 "storage": "256 GB",
@@ -74,7 +126,7 @@
                     "userName": "Ahmet",
                     "comment": "Harika bir telefon",
                     "rating": 5,
-                    "like" : 0,
+                    "like": 0,
                     "date": "2021-01-14"
                 }
             ],
@@ -85,6 +137,316 @@
                     "userName": "Ahmet",
                     "question": "Telefonun kamerası kaç megapiksel?",
                     "answer": "12 MP",
+                    "answerBy": "MARMARA STORE - Turkcell Mağazası",
+                    "date": "2021-01-14"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "IPHONE 13 128 GB",
+            "price": 36.399,
+            "discountPercentage": 0,
+            "discountEndDate": "",
+            "stock": 40,
+            "bestOffer": false,
+            "bestSeller": false,
+            "newArrival": false,
+            "shoppingCredit": true,
+            "freeShipping": true,
+            "fastDelivery": true,
+            "payWithInvoice": false,
+            "installmentInvoice": false,
+            "limitedSelling": false,
+            "image": [
+                {
+                    "imgUrl": "iphone-13-128gb.webp"
+                },
+                {
+                    "imgUrl": "iphone-13-128gb2.webp"
+                },
+                {
+                    "imgUrl": "iphone-13-128gb3.webp"
+                },
+                {
+                    "imgUrl": "iphone-13-128gb4.webp"
+                },
+                {
+                    "imgUrl": "iphone-13-128gb5.webp"
+                },
+                {
+                    "imgUrl": "iphone-13-128gb6.webp"
+                },
+                {
+                    "imgUrl": "iphone-13-128gb7.webp"
+                },
+                {
+                    "imgUrl": "iphone-13-128gb8.webp"
+                },
+                {
+                    "imgUrl": "iphone-13-128gb9.webp"
+                },
+                {
+                    "imgUrl": "iphone-13-128gb10.webp"
+                },
+                {
+                    "imgUrl": "iphone-13-128gb11.webp"
+                },
+                {
+                    "imgUrl": "iphone-13-128gb12.webp"
+                },
+                {
+                    "imgUrl": "iphone-13-128gb13.webp"
+                },
+                {
+                    "imgUrl": "iphone-13-128gb14.webp"
+                },
+                {
+                    "imgUrl": "iphone-13-128gb15.webp"
+                }
+            ],
+            "color": [
+                "Gece Yarısı",
+                "Mavi",
+                "Yeşil",
+                "Yıldız Işığı",
+                "Kırmızı",
+                "Pembe"
+            ],
+            "credit": true,
+            "creditMonth": 3,
+            "creditPrice": "14.299.34",
+            "description": "",
+            "category": "cep-telefonu",
+            "subCategory": "ios-telefonlar",
+            "rating": 4.8,
+            "addingDate": "2021-01-14",
+            "edittedDate": "2021-01-14",
+            "seller": "Turkcell Satış A.Ş.",
+            "detailText": "Akıllı telefonlar teknolojik ilerlemeyle üst düzey özelliklerle tasarlanır. Bu alanda önemli yere sahip Apple telefonlar, yeni modelleriyle teknolojiyi zirveye taşır. Türünün son örneği olan iPhone 15 Pro Max 256 GB özellik ve tasarımıyla önemli güncellemeleri getirir. Fotoğraf, video, oyun ve çeşitli uygulamalarda kusursuz performans gösteren telefon, her işlemi kolayca yapar. 256 GB’lık depolama alanı da standart kullanım için kusursuz seçenek sunar. Yenilenen tüm özellikleri ile iPhone 15 Pro Max’in dünyasına adım alabilirsiniz.",
+            "explanation": [
+                {
+                    "title": "Süper bir güç.",
+                    "text": "6,1 inç boyutundaki geniş ekranı ile birçok kullanıcının ilgi odağı olmayı başaran iPhone 13 modelleri, OLED ekran teknolojisi ile de dikkat çeker. 1170 x 2532 piksel ekran çözünürlüğü sayesinde pek çok formattaki görüntünün net bir şekilde ekrana yansımasını sağlayabileceğiniz modelde, FHD+ çözünürlük standardı kullanılır. Corning Gorilla Shield Glass ile özel olarak korunan model, kolay kolay zarar görmemesi ile bilinir. 60 Hz ekran yenileme hızı ile birçok kişinin tercihi haline gelen iPhone 13 özellikleri ile kullanıcıların yüzünü güldürmeyi başarır. Cihazın dikkat çeken özellikleri arasında HDR10, Multi Touch, True Tone Ekran, Dolby Vision ve çerçevesiz tasarım gibi birçok özellik de yer alır.",
+                    "image": "iphone-13-128gb-explanation1.webp"
+                },
+                {
+                    "title": "iPhone 13 Teknik Özellikleri",
+                    "text": "Modelde bulunan Bluetooth 5.0 özelliği sayesinde iOS işletim sistemine sahip akıllı telefonlar ile veri transferi gerçekleştirme şansına sahipsiniz. Cihazda yer alan Wi-Fi alıcısı, telefonunuzla internete girmenizi sağlar. Öte yandan cihazda NFC özelliği de yer alır. Bu sayede temassız ödeme işlemleri ve ulaşım kartı doldurma gibi işlemler rahatlıkla yapabilirsiniz. Bu akıllı telefon modeli, hem suya hem de toza dayanıklı yapısıyla dikkat çeker. Üstelik iPhone 13’ün suya dayanıklılığı, IPX8 sertifikası ile belgelendirilmiştir. Öte yandan cihazın toza dayanıklılığı ise IP6X sertifikası ile kanıtlanmıştır. iPhone 13 sayesinde Skype, Discord ve Whatsapp gibi birçok uygulama aracılığıyla görüntülü konuşmalar yapabilirsiniz. Lightning ses çıkışının bulunduğu akıllı telefon modelinde stereo ve çift hoparlör özelliği de yer alır. Öte yandan iPhone 13’de Siri, Face ID ve FaceTime gibi özellikler de bulunur. Çift sim kart teknolojisinin kullanıldığı iPhone 13’ü avantajlı fiyatlarıyla hemen satın alabilirsiniz.",
+                    "image": "iphone-13-128gb-explanation2.webp"
+                }
+            ],
+            "details": {
+                "model": "IPHONE 13 128GB",
+                "storage": "128 GB",
+                "screenSize": "6.7 inç",
+                "screenResolution": "2778 x 1284",
+                "processor": "Apple A15 Bionic",
+                "ram": "8 GB",
+                "battery": "4352 mAh",
+                "camera": "12 MP + 12 MP + 12 MP",
+                "frontCamera": "12 MP",
+                "operatingSystem": "iOS 15",
+                "simCard": "Nano SIM",
+                "network": "5G",
+                "weight": "238 g",
+                "dimensions": "160.8 x 78.1 x 7.65 mm",
+                "waterproof": "IP68",
+                "dualSim": "Var",
+                "warranty": "2 Yıl"
+            },
+            "comments": [
+                {
+                    "id": 1,
+                    "userId": 1,
+                    "userName": "Ahmet",
+                    "comment": "Harika bir telefon",
+                    "rating": 5,
+                    "like": 0,
+                    "date": "2021-01-14"
+                }
+            ],
+            "questions": [
+                {
+                    "id": 1,
+                    "userId": 1,
+                    "userName": "Ahmet",
+                    "question": "Telefonun kamerası kaç megapiksel?",
+                    "answer": "12 MP",
+                    "answerBy": "MARMARA STORE - Turkcell Mağazası",
+                    "date": "2021-01-14"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Hp 250 G9 6Q8M5ES i5-1235U 8GB 512SSD 15.6 inç FullHD FreeDOS Taşınabilir Bilgisayar",
+            "price": 15.651,
+            "discountPercentage": 0,
+            "discountEndDate": "",
+            "stock": 40,
+            "bestOffer": false,
+            "bestSeller": false,
+            "newArrival": false,
+            "shoppingCredit": true,
+            "freeShipping": true,
+            "fastDelivery": true,
+            "payWithInvoice": false,
+            "installmentInvoice": false,
+            "limitedSelling": false,
+            "image": [
+                {
+                    "imgUrl": "hp-250-g9.webp"
+                },
+                {
+                    "imgUrl": "hp-250-g92.webp"
+                },
+                {
+                    "imgUrl": "hp-250-g93.webp"
+                },
+                {
+                    "imgUrl": "hp-250-g94.webp"
+                },
+                {
+                    "imgUrl": "hp-250-g95.webp"
+                },
+                {
+                    "imgUrl": "hp-250-g96.webp"
+                }
+            ],
+            "color": [
+                "Gri"
+            ],
+            "credit": false,
+            "creditMonth": 0,
+            "creditPrice": "",
+            "description": "",
+            "category": "bilgisayar-tablet",
+            "subCategory": "dizustu-bilgisayarlar",
+            "rating": 0,
+            "addingDate": "2021-01-14",
+            "edittedDate": "2021-01-14",
+            "seller": "Turkcell Satış A.Ş.",
+            "detailText": "",
+            "explanation": [
+                {
+                    "title": "Zarif Tasarım",
+                    "text": "Dilerseniz evinizde dilerseniz işyerinizde kolaylıkla kullanım sağlayabileceğiniz bilgisayarınız oldukça ince ve hafif tasarımının yanı sıra geniş ekran özelliği sayesinde özellikle toplantılarınızın vazgeçilmezi olacaktır. Görüntülü şekilde yapacağınız toplantılarınızda veya sunumlarınızda HD Kamera, karanlık ve aydınlık ortamlarda en iyi şekilde görünmenize neden olur.",
+                    "image": "hp-250-g9-explanation1.webp"
+                },
+                {
+                    "title": "Güzel ve Hafif",
+                    "text": "HP 250 G9 Dizüstü Bilgisayar, ince ve hafif tasarımıyla mobil çalışma tarzlarına ayak uydurur. Dar çerçeveli tasarımı ve büyük ekran-gövde oranı ile güzel ekran, çalışma veya akış içeriği için geniş alan sağlar.",
+                    "image": "hp-250-g9-explanation2.webp"
+                }
+            ],
+            "details": {
+                "model": "HP 250 G9 6Q8M5ES İ5-1235U 8GB 512SSD 15.6 FULLHD FREEDOS TAŞINABİLİR BİLGİSAYAR",
+                "storage": "512 GB",
+                "screenSize": "15.6 inç",
+                "screenResolution": "1920 x 1080",
+                "processor": "ıntel Core i5",
+                "ram": "8 GB",
+                "battery": "3 hücreli, 41 Wh Li-ion",
+                "camera": "HD Kamera"
+            },
+            "comments": [
+                {
+                    "id": 1,
+                    "userId": 1,
+                    "userName": "Ahmet",
+                    "comment": "Harika bir bilgisayar",
+                    "rating": 5,
+                    "like": 0,
+                    "date": "2021-01-14"
+                }
+            ],
+            "questions": [
+                {
+                    "id": 1,
+                    "userId": 1,
+                    "userName": "Ahmet",
+                    "question": "Bilgisayarın Ram Belleği kaç gb?",
+                    "answer": "8 GB",
+                    "answerBy": "MARMARA STORE - Turkcell Mağazası",
+                    "date": "2021-01-14"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Sony PS5 Slim 1 TB Dijital Çift Kollu",
+            "price": 22.799,
+            "discountPercentage": 2,
+            "discountEndDate": "2021-01-14",
+            "stock": 40,
+            "bestOffer": false,
+            "bestSeller": false,
+            "newArrival": false,
+            "shoppingCredit": true,
+            "freeShipping": true,
+            "fastDelivery": true,
+            "payWithInvoice": false,
+            "installmentInvoice": false,
+            "limitedSelling": false,
+            "image": [
+                {
+                    "imgUrl": "sony-ps5-slim-1tb.webp"
+                },
+                {
+                    "imgUrl": "sony-ps5-slim-1tb2.webp"
+                }
+            ],
+            "color": [
+                "Beyaz - Pembe",
+                "Beyaz - Kırmızı"
+            ],
+            "credit": false,
+            "creditMonth": 0,
+            "creditPrice": "",
+            "description": "",
+            "category": "hobi-oyun",
+            "subCategory": "oyun-konsollari",
+            "rating": 5,
+            "addingDate": "2021-01-14",
+            "edittedDate": "2021-01-14",
+            "seller": "Turkcell Satış A.Ş.",
+            "detailText": "",
+            "explanation": [
+                {
+                    "title": "Ürün Bilgisi",
+                    "text": "Bluetooth:Var - Sabit Disk Kapasitesi: 1 TB - Model:CUH 2016B - İşlemci: x86-64 AMD, 8 çekirdek - Marka: Sony - Kol Sayısı: 2 - KolluUsb Girşi: Var",
+                    "image": "sony-ps5-slim-1tb-explanation1.webp"
+                }
+            ],
+            "details": {
+                "model": "SONY PS5 SLIM 1 TB DIJITAL CIFT KOLLU",
+                "storage": "1 TB",
+                "screenSize": "-",
+                "screenResolution": "-",
+                "processor": "Sony",
+                "ram": "-",
+                "battery": "-",
+                "camera": "-"
+            },
+            "comments": [
+                {
+                    "id": 1,
+                    "userId": 1,
+                    "userName": "Ahmet",
+                    "comment": "Harika bir bilgisayar",
+                    "rating": 5,
+                    "like": 0,
+                    "date": "2021-01-14"
+                }
+            ],
+            "questions": [
+                {
+                    "id": 1,
+                    "userId": 1,
+                    "userName": "Ahmet",
+                    "question": "Bilgisayarın Ram Belleği kaç gb?",
+                    "answer": "8 GB",
                     "answerBy": "MARMARA STORE - Turkcell Mağazası",
                     "date": "2021-01-14"
                 }
@@ -109,7 +471,7 @@
             "endDate": "2021-01-31"
         }
     ],
-    "sellers" : [
+    "sellers": [
         {
             "id": 1,
             "name": "Turkcell Satış A.Ş.",
