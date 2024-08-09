@@ -36,7 +36,7 @@ const SingleProduct: React.FC<SingleProductProps> = ({ product }) => {
                             product?.image.map((image, index)=> (
                                 <SwiperSlide key={index}>
                                     <ImageWrapper width='248px' height='186px'>
-                                        <Image src={`/images/products/${image.imgUrl}`} layout='fill' objectFit='contain' alt='Product Image' />
+                                        <Image src={`/images/products/${image.imgUrl}`} fill objectFit='contain' alt='Product Image' />
                                     </ImageWrapper>
                                 </SwiperSlide>
                             ))
@@ -87,11 +87,11 @@ const SingleProduct: React.FC<SingleProductProps> = ({ product }) => {
                 {
                     product?.discountPercentage > 0 ? (
                         <Title fsize='18px' fcolor='#2855AC' fweight='700' lineHeight='1' textAlign='start'>
-                            {product?.price * ((100 - product?.discountPercentage) / 100)}
+                            {(product?.price * ((100 - product?.discountPercentage) / 100)).toLocaleString('tr-TR')}
                         </Title>
                     ) : (
                         <Title fsize='18px' fcolor='#2855AC' fweight='700' lineHeight='1' textAlign='start'>
-                            {product?.price}
+                            {product?.price.toLocaleString('tr-TR')}
                         </Title>
                     )
                 }
@@ -99,14 +99,14 @@ const SingleProduct: React.FC<SingleProductProps> = ({ product }) => {
                     {
                         product?.discountPercentage > 0 ? (
                             <Title className='text-line' fsize='12px' fcolor='#5F6B7666' fweight='700' >
-                                {product?.price}
+                                {product?.price.toLocaleString('tr-TR')}
                             </Title>
                         ) : <Title></Title>
                     }
                     {
                         product?.discountPercentage > 0 && (
                             <Title fsize='12px' fcolor='#00BAFC' fweight='700' >
-                                {product.price * (product.discountPercentage / 100)} TL indirim
+                                {(product.price * (product.discountPercentage / 100)).toLocaleString('tr-TR')} TL indirim
                             </Title>
                         )
                     }

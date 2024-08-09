@@ -22,6 +22,7 @@ interface Props {
     gap?: string;
     padding?: string;
     margin?: string;
+    flexWrap?: string;
 }
 
 interface ImageProps {
@@ -72,6 +73,7 @@ justify-content: ${(props) => props.justifyContent ? props.justifyContent : 'cen
 gap: ${(props) => props.gap ? props.gap : '0px'};
 padding: ${(props) => props.padding ? props.padding : '0px'};
 margin: ${(props) => props.margin ? props.margin : '0px'};
+flex-wrap: ${(props) => props.flexWrap ? props.flexWrap : 'nowrap'};
 `;
 
 export const Column = styled.div<Props>`
@@ -110,8 +112,8 @@ export const GridColumn = styled.div`
 flex-basis: 0;
 flex-grow: 1;
 max-width: 100%;
-padding: 0 .625rem;
 `;
+// padding: 0 .625rem;
 
 export const SocialIcon = styled(Link)`
 color: #fff;

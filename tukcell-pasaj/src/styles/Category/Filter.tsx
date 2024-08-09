@@ -13,6 +13,18 @@ border-radius: 0;
 border-bottom: 1px solid #dce1e6;
 width: 100%;
 padding: 16px 20px;
+max-height: 200px;
+overflow-y: auto;
+&::-webkit-scrollbar {
+width: 5px;
+padding-right: 7px;
+} 
+&::-webkit-scrollbar-track {
+background: lightgrey;
+}
+&::-webkit-scrollbar-thumb {
+background-color: #253342;
+}
 `;
 
 export const ContratInput = styled.input`
@@ -127,4 +139,49 @@ export const SortingLabel = styled.label`
      font-weight: 700;
      font-size: 16px;
  }
+`;
+
+export const FilterCheckInput = styled.input`
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+`;
+
+export const FilterCheck = styled.label`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  padding: 5px;
+  font-size: 16px;
+  user-select: none;
+  
+  &:before {
+    content: "";
+    position: relative;
+    display: flex;
+    align-items: center;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid grey;
+    background: white;
+    margin-right: 10px;
+  }
+
+  ${FilterCheckInput}:checked + &:before {
+    content: "✔";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #ffc900;
+  }
+`;
+
+export const FilterCheckWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
 `;

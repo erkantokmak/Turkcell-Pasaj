@@ -1,10 +1,17 @@
-import { FilterCard, SortingButton, SortingLabel } from '@/styles/Category/Filter'
-import { Column, Row, Title } from '@/styles/Global'
-import React from 'react'
-import { FaChevronDown } from 'react-icons/fa6'
-import FilterItems from './FilterItem'
+import { FilterCard, SortingButton, SortingLabel } from '@/styles/Category/Filter';
+import { Column, Row } from '@/styles/Global';
+import React from 'react';
+import FilterItems from './FilterItem';
 
-const Sorting = () => {
+type SortingProps = {
+  onFilterChange: (filterName: string, value: any) => void;
+};
+
+const Sorting: React.FC<SortingProps> = ({ onFilterChange }) => {
+  const handleSortingChange = (value: string) => {
+    onFilterChange('sortBy', value);
+  };
+
   return (
     <FilterCard>
       <FilterItems title={'Sıralama'} isOpen={false}>
@@ -14,6 +21,7 @@ const Sorting = () => {
               type='radio'
               id='mostpopular'
               name='sorting'
+              onChange={() => handleSortingChange('mostPopular')}
             />
             <SortingLabel htmlFor='mostpopular'>
               En Popüler
@@ -24,6 +32,7 @@ const Sorting = () => {
               type='radio'
               id='news'
               name='sorting'
+              onChange={() => handleSortingChange('newArrivals')}
             />
             <SortingLabel htmlFor='news'>
               En Yeniler
@@ -34,6 +43,7 @@ const Sorting = () => {
               type='radio'
               id='lowprice'
               name='sorting'
+              onChange={() => handleSortingChange('lowestPrice')}
             />
             <SortingLabel htmlFor='lowprice'>
               En Düşük Fiyat
@@ -44,6 +54,7 @@ const Sorting = () => {
               type='radio'
               id='highprice'
               name='sorting'
+              onChange={() => handleSortingChange('highestPrice')}
             />
             <SortingLabel htmlFor='highprice'>
               En Yüksek Fiyat
@@ -54,6 +65,7 @@ const Sorting = () => {
               type='radio'
               id='highpoint'
               name='sorting'
+              onChange={() => handleSortingChange('highestRating')}
             />
             <SortingLabel htmlFor='highpoint'>
               En Yüksek Puan
@@ -62,7 +74,7 @@ const Sorting = () => {
         </Column>
       </FilterItems>
     </FilterCard>
-  )
-}
+  );
+};
 
-export default Sorting
+export default Sorting;

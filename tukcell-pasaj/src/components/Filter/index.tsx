@@ -3,15 +3,21 @@ import Category from './Category'
 import Sorting from './Sorting'
 import Contrats from './Contrats'
 import FilterGroup from './FilterGroup'
-import { Column, Row } from '@/styles/Global'
+import { Column } from '@/styles/Global'
+import { Product } from '@/types/product'
 
-const index = () => {
+type FilterProps = {
+  data: Product[],
+  onFilterChange: (filterName: string, value: any) => void,
+}
+
+const index: React.FC<FilterProps> = ({data, onFilterChange},categoryName) => {
   return (
-    <Column gap='20px'>
-      <Category />
-      <Sorting />
-      <Contrats />
-      <FilterGroup />
+    <Column gap='20px' padding='0' margin='0'>
+      <Category onFilterChange={onFilterChange} products={data} />
+      <Sorting onFilterChange={onFilterChange} />
+      <Contrats onFilterChange={onFilterChange}/>
+      <FilterGroup  onFilterChange={onFilterChange} products={data}/>
     </Column>
   )
 }

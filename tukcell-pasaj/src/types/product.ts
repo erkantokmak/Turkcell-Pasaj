@@ -52,6 +52,7 @@ export type Product = {
     id: number,
     name: string,
     price: number,
+    brand: string,
     discountPercentage: number,
     discountEndDate: string,
     stock: number,
