@@ -9,9 +9,10 @@
     ],
     "products": [
         {
-            "id": 1,
+            "id": "1",
             "name": "iPhone 15 Pro Max 256 GB",
-            "price": 89.999,
+            "price": 89999,
+            "brand": "Apple",
             "discountPercentage": 12,
             "discountEndDate": "2021-01-14",
             "stock": 40,
@@ -145,7 +146,8 @@
         {
             "id": 2,
             "name": "IPHONE 13 128 GB",
-            "price": 36.399,
+            "price": 36399,
+            "brand": "Apple",
             "discountPercentage": 0,
             "discountEndDate": "",
             "stock": 40,
@@ -281,7 +283,8 @@
         {
             "id": 3,
             "name": "Hp 250 G9 6Q8M5ES i5-1235U 8GB 512SSD 15.6 inç FullHD FreeDOS Taşınabilir Bilgisayar",
-            "price": 15.651,
+            "price": 15651,
+            "brand":"Hp",
             "discountPercentage": 0,
             "discountEndDate": "",
             "stock": 40,
@@ -376,7 +379,8 @@
         {
             "id": 4,
             "name": "Sony PS5 Slim 1 TB Dijital Çift Kollu",
-            "price": 22.799,
+            "price": 22799,
+            "brand":"Sony",
             "discountPercentage": 2,
             "discountEndDate": "2021-01-14",
             "stock": 40,
@@ -405,7 +409,7 @@
             "creditMonth": 0,
             "creditPrice": "",
             "description": "",
-            "category": "hobi-oyun",
+            "category": "cep-telefonu",
             "subCategory": "oyun-konsollari",
             "rating": 5,
             "addingDate": "2021-01-14",
