@@ -24,7 +24,7 @@
             "fastDelivery": true,
             "payWithInvoice": false,
             "installmentInvoice": false,
-            "limitedSelling": false,
+            "limitedSelling": true,
             "image": [
                 {
                     "imgUrl": "iphone-15-pro-max.webp"
@@ -72,11 +72,47 @@
                     "imgUrl": "iphone-15-pro-max15.webp"
                 }
             ],
-            "color": [
-                "Mavi Titanyum",
-                "Siyah Titanyum",
-                "Beyaz Titanyum",
-                "Natürel Titanyum"
+            "options": [
+                {
+                    "color": {
+                        "name": "Renk",
+                        "values": [
+                            {
+                                "code": "#505867",
+                                "name": "Mavi Titanyum"
+                            },
+                            {
+                                "code": "#4D4E50",
+                                "name": "Siyah Titanyum"
+                            },
+                            {
+                                "code": "#F3F2ED",
+                                "name": "Beyaz Titanyum"
+                            },
+                            {
+                                "code": "#BBBEA9",
+                                "name": "Natürel Titanyum"
+                            }
+                        ]
+                    },
+                    "storage": {
+                        "name": "Depolama",
+                        "values": [
+                            {
+                                "code": "128gb",
+                                "name": "128 GB"
+                            },
+                            {
+                                "code": "256gb",
+                                "name": "256 GB"
+                            },
+                            {
+                                "code": "512gb",
+                                "name": "512 GB"
+                            }
+                        ]
+                    }
+                }
             ],
             "credit": true,
             "creditMonth": 3,
@@ -88,17 +124,18 @@
             "addingDate": "2021-01-14",
             "edittedDate": "2021-01-14",
             "seller": "Turkcell Satış A.Ş.",
+            "sellerPoint": 10,
             "detailText": "Akıllı telefonlar teknolojik ilerlemeyle üst düzey özelliklerle tasarlanır. Bu alanda önemli yere sahip Apple telefonlar, yeni modelleriyle teknolojiyi zirveye taşır. Türünün son örneği olan iPhone 15 Pro Max 256 GB özellik ve tasarımıyla önemli güncellemeleri getirir. Fotoğraf, video, oyun ve çeşitli uygulamalarda kusursuz performans gösteren telefon, her işlemi kolayca yapar. 256 GB’lık depolama alanı da standart kullanım için kusursuz seçenek sunar. Yenilenen tüm özellikleri ile iPhone 15 Pro Max’in dünyasına adım alabilirsiniz.",
             "explanation": [
                 {
                     "title": "A17 Pro. Ezber bozan bir çip. Çığır açan bir performans.",
                     "text": "Apple GPU’ları tarihindeki en büyük tasarım yeniliğine hazır mısınız? Tamamen yeni bir iPhone çip sınıfı olan A17 Pro, şimdiye kadarki en iyi grafik performansımızı sunuyor. Hem de açık ara.",
-                    "image": " url"
+                    "image": "iphone15-explanation1.webp"
                 },
                 {
                     "title": "Apple GPU’ları tarihindeki en büyük tasarım yeniliğine hazır mısınız? Tamamen yeni bir iPhone çip sınıfı olan A17 Pro, şimdiye kadarki en iyi grafik performansımızı sunuyor. Hem de açık ara.",
                     "text": "iPhone 15 Pro havacılık ve uzay endüstrisi standartlarında titanyum tasarıma sahip ilk iPhone. Öyle ki, Mars görevlerindeki uzay araçlarında da aynı alaşım kullanılıyor.",
-                    "image": "url"
+                    "image": "iphone15-explanation2.webp"
                 }
             ],
             "details": {
@@ -144,7 +181,7 @@
             ]
         },
         {
-            "id": 2,
+            "id": "2",
             "name": "IPHONE 13 128 GB",
             "price": 36399,
             "brand": "Apple",
@@ -225,6 +262,7 @@
             "addingDate": "2021-01-14",
             "edittedDate": "2021-01-14",
             "seller": "Turkcell Satış A.Ş.",
+            "sellerPoint": 10,
             "detailText": "Akıllı telefonlar teknolojik ilerlemeyle üst düzey özelliklerle tasarlanır. Bu alanda önemli yere sahip Apple telefonlar, yeni modelleriyle teknolojiyi zirveye taşır. Türünün son örneği olan iPhone 15 Pro Max 256 GB özellik ve tasarımıyla önemli güncellemeleri getirir. Fotoğraf, video, oyun ve çeşitli uygulamalarda kusursuz performans gösteren telefon, her işlemi kolayca yapar. 256 GB’lık depolama alanı da standart kullanım için kusursuz seçenek sunar. Yenilenen tüm özellikleri ile iPhone 15 Pro Max’in dünyasına adım alabilirsiniz.",
             "explanation": [
                 {
@@ -281,10 +319,10 @@
             ]
         },
         {
-            "id": 3,
+            "id": "3",
             "name": "Hp 250 G9 6Q8M5ES i5-1235U 8GB 512SSD 15.6 inç FullHD FreeDOS Taşınabilir Bilgisayar",
             "price": 15651,
-            "brand":"Hp",
+            "brand": "Hp",
             "discountPercentage": 0,
             "discountEndDate": "",
             "stock": 40,
@@ -330,6 +368,7 @@
             "addingDate": "2021-01-14",
             "edittedDate": "2021-01-14",
             "seller": "Turkcell Satış A.Ş.",
+            "sellerPoint": 10,
             "detailText": "",
             "explanation": [
                 {
@@ -377,10 +416,10 @@
             ]
         },
         {
-            "id": 4,
+            "id": "4",
             "name": "Sony PS5 Slim 1 TB Dijital Çift Kollu",
             "price": 22799,
-            "brand":"Sony",
+            "brand": "Sony",
             "discountPercentage": 2,
             "discountEndDate": "2021-01-14",
             "stock": 40,
@@ -415,6 +454,7 @@
             "addingDate": "2021-01-14",
             "edittedDate": "2021-01-14",
             "seller": "Turkcell Satış A.Ş.",
+            "sellerPoint": 10,
             "detailText": "",
             "explanation": [
                 {

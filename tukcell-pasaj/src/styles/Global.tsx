@@ -66,6 +66,7 @@ text-decoration: line-through;
 `;
 
 export const Row = styled.div<Props>`
+width: ${(props) => props.width ? props.width : ''};
 display: flex;
 flex-direction: row;
 align-items: ${(props) => props.alignItems ? props.alignItems : 'center'};
@@ -138,14 +139,15 @@ margin:0 auto;
 opacity: .1;
 `;
 
-export const YellowButton = styled.button`
+export const YellowButton = styled.button<{width?: string, display?: string}>`
+width: ${(props) => props.width ? props.width : ''};
 border-radius: 50px;
 background-color: #FFC900;
 color: #000;
 padding: 16px;
 cursor: pointer;
 border: none;
-display: flex;
+display: ${(props) => props.display ? props.display : 'flex'};
 gap: 30px;
 align-items: center;
 justify-content: space-between;

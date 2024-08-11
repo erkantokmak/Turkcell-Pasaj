@@ -120,7 +120,7 @@ export const SortingLabel = styled.label`
   }
 
   ${SortingButton}:checked + &::before {
-    border-color: #ffc900; 
+    border:1px solid #8e9fad; 
   }
 
   ${SortingButton}:checked + &::after {

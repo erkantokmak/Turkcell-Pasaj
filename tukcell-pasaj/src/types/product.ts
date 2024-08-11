@@ -48,6 +48,19 @@ interface Image {
     imgUrl: string;
 }
 
+export type OptionValue = {
+    code: string;
+    name: string;
+}
+
+export type Option = {
+    name: string;
+    values: OptionValue[];
+}
+
+export type Options = {
+    [key: string]: Option;
+}
 export type Product = {
     id: number,
     name: string,
@@ -66,7 +79,7 @@ export type Product = {
     installmentInvoice: boolean,
     limitedSelling: boolean,
     image: Image[],
-    color: Array<string>,
+    options: Options[],
     credit: boolean,
     creditMonth: number,
     creditPrice: string,
@@ -77,6 +90,7 @@ export type Product = {
     addingDate: string,
     edittedDate: string,
     seller: string,
+    sellerPoint: number,
     detailText: string,
     explanation: Explanation[],
     details: Detail[],
