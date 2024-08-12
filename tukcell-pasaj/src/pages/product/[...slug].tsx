@@ -1,13 +1,14 @@
 import ProductTabs from '@/components/Products/TabMenu/ProductTabs';
-import TabMenu from '@/components/Products/TabMenu/TabMenu';
-import { fetchProductById } from '@/lib/server'
+import { fetchCartById, fetchProductById, updateUserBasket } from '@/lib/server'
 import { SortingButton, SortingLabel } from '@/styles/Category/Filter';
 import { Column, Container, ImageWrapper, Row, Title, YellowButton } from '@/styles/Global';
 import { ColorBox, ColoredBox, DetailIcon, DropdownContainer, DropdownHeader, DropdownItem, DropdownList, FavoriteButton, Limited, ProductIcons, SellerWrapper, StyledLink } from '@/styles/Products/DetailPage';
 import { FavIcon, ProductTag } from '@/styles/Products/SingleProduct';
+import { CartItem } from '@/types/cart';
 import {Product} from '@/types/product';
-import { dehydrate, QueryClient, useQuery } from '@tanstack/react-query'
+import { dehydrate, QueryClient, useMutation, useQuery } from '@tanstack/react-query'
 import { GetServerSideProps } from 'next';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import React, {  useMemo, useState } from 'react'
 import { FaCalendarAlt, FaChevronDown, FaChevronUp, FaRegHeart, FaShieldAlt, FaTruck } from 'react-icons/fa';
@@ -42,10 +43,63 @@ const Product: React.FC<ProductProps> = ({ slug }) => {
         queryKey: ['product', slug],
         queryFn: () => fetchProductById(slug[0]),
     });
-    console.log(data)
 
+    const session = useSession();
+    const uid = (session.data?.user as { id: string })?.id;
+
+    const { data: cart } = useQuery<CartItem[]>({
+        queryKey: ['cart'],
+        queryFn: () => fetchCartById(uid),
+    })
+    const queryClient = new QueryClient();
+    
     const [selectedOptions, setSelectedOptions] = useState<{ [key: string]: string }>({});
     const [isOpen, setIsOpen] = useState<{ [key: string]: boolean }>({});
+    
+    
+    const { mutate } = useMutation({
+        mutationFn: ({uid, cart}:{ uid: string, cart: CartItem[]}) => updateUserBasket({uid, cart}),
+        onSuccess: () => {
+            // alert
+            queryClient.invalidateQueries({ queryKey: ['cart']})
+        }
+    })
+    
+    
+    
+    const handleAddToCart = async () => {
+        if (!cart || cart.length === 0) {
+            
+            const cartItem: CartItem = {
+                product: data || {} as Product,
+                quantity: 1,
+                options: { ...selectedOptions }
+            };
+            mutate({ uid: uid, cart: [cartItem] });
+        } else {
+           
+            const existingCartItemIndex = cart.findIndex(
+                (item: CartItem) => item.product.id === data?.id && JSON.stringify(item.options) === JSON.stringify(selectedOptions)
+            );
+    
+            if (existingCartItemIndex !== -1) {
+                
+                const updatedCart = [...cart];
+                updatedCart[existingCartItemIndex].quantity += 1;
+                mutate({ uid: uid, cart: updatedCart });
+            } else {
+                
+                const cartItem: CartItem = {
+                    product: data || {} as Product,
+                    quantity: 1,
+                    options: { ...selectedOptions }
+                };
+                const newCart = [...cart, cartItem];
+                mutate({ uid: uid, cart: newCart });
+            }
+        }
+    };
+    
 
     useMemo(() => {
         if (data?.options?.[0]) {
@@ -71,6 +125,7 @@ const Product: React.FC<ProductProps> = ({ slug }) => {
             [optionType]: !prev[optionType],
         }));
     };
+    
 
     const getSelectedOptionName = (optionType: string): string[] => {
         const selectedOptionCode = selectedOptions[optionType];
@@ -183,7 +238,7 @@ const Product: React.FC<ProductProps> = ({ slug }) => {
                                 }
                                 <Row justifyContent='flex-end'>
                                     <Title fsize='24px' fcolor='#2855AC' fweight='700'>
-                                        {data?.creditPrice.toLocaleString('tr-TR')} TL
+                                        {data?.creditPrice} TL
                                     </Title>
                                     <Title fsize='16px' fcolor='#2855AC' fweight='700' margin='0 0 0 5px'>
                                         x {data?.creditMonth} Ay
@@ -235,7 +290,7 @@ const Product: React.FC<ProductProps> = ({ slug }) => {
                         </SellerWrapper>
                     </Row>
                     <Row width='100%' justifyContent='stretch'>
-                        <YellowButton width='100%' display='block'><Title fsize="16px" fcolor='#253342' fweight='500' >Sepete Ekle</Title></YellowButton>
+                        <YellowButton width='100%' display='block'><Title fsize="16px" fcolor='#253342' fweight='500' onClick={handleAddToCart}>Sepete Ekle</Title></YellowButton>
                     </Row>
                     <Row>
                         <ProductIcons>
@@ -261,7 +316,7 @@ const Product: React.FC<ProductProps> = ({ slug }) => {
             </Row>
           
         </Container>
-          <ProductTabs data={data} />
+        {data && <ProductTabs data={data} />}
     </>
         )
 }

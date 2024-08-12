@@ -23,14 +23,6 @@ const Details: React.FC<DetailsProps> = ({data}) => {
               </DetailItem>
             ))
           }
-          <DetailItem>
-            <Title fsize='16px' fcolor='#253342' fweight='700'>
-              as
-            </Title>
-            <Title fsize='14px' fcolor='#5F6B76'>
-              asd
-            </Title>
-          </DetailItem>
         </DetailContent>
       </Container>
     </DetailTab>

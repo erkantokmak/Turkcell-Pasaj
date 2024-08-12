@@ -10,7 +10,9 @@ const index = () => {
         <>
             <Container>
                 <TopHeader />
+            </Container>
                 <MidHeader />
+            <Container>
                 <Menu />
                 <Breadcumb />
             </Container>

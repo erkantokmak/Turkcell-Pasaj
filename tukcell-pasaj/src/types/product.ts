@@ -28,14 +28,15 @@ interface Comment {
     date: string;
 }
 
-interface Question {
-    id: number;
-    userId: number;
+export type Question = {
+    id: string;
+    userId: string;
     userName: string;
     question: string;
+    askDate: string;
     answer: string;
     answerBy: string;
-    date: string;
+    answerDate: string;
 }
 
 interface Explanation {
@@ -62,7 +63,7 @@ export type Options = {
     [key: string]: Option;
 }
 export type Product = {
-    id: number,
+    id: number | string,
     name: string,
     price: number,
     brand: string,

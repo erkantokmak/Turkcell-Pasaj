@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { Title } from '../Global';
+import { SearchBar } from '../Header/HeaderStyle';
 
 export const FavoriteButton = styled.button`
 margin-left: 5px;
@@ -136,7 +137,7 @@ width: 100%;
 box-shadow: 0 1px 4px 0 rgba(37,51,66,.2)
 `;
 
-export const ProductTabItem = styled.div<{active: boolean}>`
+export const ProductTabItem = styled.div<{ active: boolean }>`
 position: relative;
 font-size: 16px;
 font-weight: 500;
@@ -158,7 +159,8 @@ opacity: .5;
 width: 1px;
 height: 30px;
 background-color: #5e6b76;
-&:last-child::after {
+}
+&:nth-last-child::after {
 display: none;
 }
 `;
@@ -181,6 +183,7 @@ flex-wrap: wrap;
 export const DetailItem = styled.div`
 width: 33%;
 gap: 20px;
+margin-bottom: 1rem;
 position: relative;
 &::after {
 align-items: center;
@@ -198,4 +201,201 @@ background-color: #5e6b76;
 &:nth-child(3n)::after {
 display: none;
 }
+`;
+
+export const FaqsTab = styled.div`
+padding: 80px 0;
+`;
+
+export const FaqsContent = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start;
+margin-bottom: 1rem;
+padding: 1.75rem 1.5rem;
+background-color: #fff;
+box-shadow: 0 1px 4px 0 rgba(37,51,66,.2);
+border-radius: .625rem;
+`;
+
+export const FaqsItem = styled.div`
+width: 100%;
+`;
+
+export const FaqsSearch = styled(SearchBar)`
+width: 100%;
+min-width: 20rem;
+&:focus {
+border: none;
+outline: none;
+}
+`;
+
+
+export const BlueButton = styled.button<{ width?: string, display?: string }>`
+width: ${(props) => props.width ? props.width : ''};
+border-radius: 50px;
+background-color: #2855ac;
+color: #fff;
+padding: 16px;
+cursor: pointer;
+border: none;
+display: ${(props) => props.display ? props.display : 'flex'};
+gap: 30px;
+align-items: center;
+justify-content: space-between;
+transition: background-color .3s;
+&:hover {
+background-color: #3a6ccd;
+}
+`;
+
+export const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+`;
+
+export const ModalContent = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  z-index: 1001;
+  border-radius: 10px;
+  width: 500px;
+  max-width: 90%;
+`;
+
+export const ModalHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+`;
+
+export const ModalCloseButton = styled.button`
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+`;
+
+export const ModalBody = styled.div`
+  margin-bottom: 20px;
+`;
+
+export const ModalFooter = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+export const ReviewsTab = styled(FaqsContent)`
+min-width: 20rem;
+`;
+
+export const RatingCount = styled.span`
+display: inline-block;
+    width: 31px;
+    line-height: 16px;
+    background-color: rgba(236, 240, 242, .75);
+    text-align: center;
+    border-radius: .5rem;
+    font-size: .75rem;
+    font-weight: 700;
+    margin-left: 10px;
+`;
+
+export const ReviewItem = styled.div`
+color: #253342;
+padding: 2.5rem 0;
+border-top: 1px solid #ecf0f2;
+`;
+
+export const ModalInput = styled(FaqsSearch)`
+width: 100%;
+height: 150px;
+padding: 1rem;
+`;
+
+export const SortDropdown = styled.select`
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 3.5rem;
+  border: 1px solid #ecf0f2;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  width: 30%;
+  cursor: pointer;
+  &:hover {
+    border-color: #253342;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 2px 0px 20px -1px rgba(0,0,0,0.2);
+  }
+  option {
+    padding: 8px;
+    font-size: 16px;
+    box-shadow: 2px 0px 26px -1px rgba(0,0,0,0.3);
+  }
+`;
+
+export const BankTable = styled.table`
+border-radius: .625rem;
+position: relative;
+background-color: #fff;
+border-collapse: collapse;
+`;
+
+export const BankTableTh = styled.th`
+height: 2.375rem;
+vertical-align: middle;
+font-size: .6875rem;
+font-weight: 700;
+line-height: 1.27;
+color: #8e9fad;
+padding: .75rem;
+text-align: left;
+`;
+
+export const BankTableTd = styled.td`
+font-size: .6875rem;
+font-weight: 500;
+color: #5f6b76;
+border-bottom: 1px solid #dee3ed;
+letter-spacing: normal;
+padding: .875rem;
+`;
+
+export const BankTableThead = styled.thead`
+border: 1px solid #dee3ed;
+background-color: #f8f9fa;
+`;
+
+export const BankTableTbody = styled(BankTableThead)`
+background-color: #fff;
+`;
+
+export const CancellationItem = styled.div`
+position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ecf0f2;
+    color: #253342;
+    padding: 44px 0;
+    height: 258px;
+    background: #fff;
+    overflow: hidden;
 `;

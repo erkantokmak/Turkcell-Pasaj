@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import '@smastrom/react-rating/style.css'
+import { SessionProvider } from "next-auth/react";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,14 +23,16 @@ const queryClient = new QueryClient({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={false} />
-      <HydrationBoundary state={pageProps.dehydratedState }>
-        <GlobalStyles />
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
-      </HydrationBoundary>
-    </QueryClientProvider >
+    <SessionProvider session={pageProps.session}>
+      <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools initialIsOpen={false} />
+        <HydrationBoundary state={pageProps.dehydratedState}>
+          <GlobalStyles />
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+        </HydrationBoundary>
+      </QueryClientProvider >
+    </SessionProvider>
   );
 }

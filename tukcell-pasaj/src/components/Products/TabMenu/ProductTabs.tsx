@@ -29,11 +29,11 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ data }) => {
             case 1:
                 return <Details data={data} />;
             case 2:
-                return <Reviews />;
+                return <Reviews data={data}/>;
             case 3:
-                return <Faqs />;
+                return <Faqs data={data} />;
             case 4:
-                return <CreditCart />;
+                return <CreditCart  data={data}/>;
             case 5:
                 return <Campaigns />;
             case 6:
