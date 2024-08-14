@@ -41,7 +41,7 @@ const BestOffer: React.FC<BestOfferProps> = ({ data }) => {
           }
           >
           {
-            data.filter((product: Product) => product.bestOffer === true)
+            data && data.filter((product: Product) => product.bestOffer === true)
               .map((product: Product, index: number) => (
                 <SwiperSlide key={index}>
                   <SingleProduct product={product} />

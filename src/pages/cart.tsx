@@ -45,7 +45,7 @@ const CartPage = () => {
     })
 
     const handleRemoveFromCart = (productId: string | number) => {
-        const updatedCart = cart?.filter((item: CartItem) => item.product.id !== productId);
+        const updatedCart = cart ? cart.filter((item: CartItem) => item.product.id !== productId) : [];
         mutate({ uid: id, cart: updatedCart || [] });
         toast.success('Ürün sepetten kaldırıldı');
     };

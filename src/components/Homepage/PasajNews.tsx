@@ -42,7 +42,7 @@ const PasajNews: React.FC<PasajNewsProps> = ({data}) => {
           }
         >
            {
-            data.filter((product: Product) => product.newArrival === true)
+            data && data.filter((product: Product) => product.newArrival === true)
               .map((product: Product, index: number) => (
                 <SwiperSlide key={index}>
                   <SingleProduct product={product} />

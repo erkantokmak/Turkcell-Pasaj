@@ -28,7 +28,7 @@ const BestSellers: React.FC<BestSellersProps> = ({ data }) => {
 
 
   const [currentCategory, setCurrentCategory] = React.useState<string>('cep-telefonu');
-  const filteredData = data?.filter((product: Product) => product.category === currentCategory && product.bestOffer === true);
+  const filteredData = data ? data.filter((product: Product) => product.category === currentCategory && product.bestOffer === true) : [];
 
 
   return (
