@@ -8,7 +8,7 @@ type PaginationProps = {
 };
 
 const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
-  const pageNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+  const pageNumbers = [];
 
   for (let i: number = 1; i <= totalPages; i++) {
     pageNumbers.push(i.toString());
