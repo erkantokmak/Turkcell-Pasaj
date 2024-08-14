@@ -137,7 +137,7 @@ const Menu = () => {
                                     <Column xs={12} md={6}>
                                         <Row gap='20px' margin='30px 0'>
                                             {
-                                                data?.slice(0, 2).map((item: Product) => (
+                                                data && data.slice(0, 2).map((item: Product) => (
                                                     <SingleProduct key={item.id} product={item} />
                                                 ))
                                             }

@@ -8,10 +8,10 @@ type PaginationProps = {
 };
 
 const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
-  const pageNumbers = [];
+  const pageNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
-  for (let i = 1; i <= totalPages; i++) {
-    pageNumbers.push(i);
+  for (let i: number = 1; i <= totalPages; i++) {
+    pageNumbers.push(i.toString());
   }
 
   const handlePrevClick = () => {
@@ -35,8 +35,8 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
         {pageNumbers.slice(0, 10).map((number) => (
           <PaginationNumber
             key={number}
-            onClick={() => onPageChange(number)}
-            active={currentPage === number}
+            onClick={() => onPageChange(parseInt(number))}
+            active={currentPage === parseInt(number)}
           >
             {number}
           </PaginationNumber>

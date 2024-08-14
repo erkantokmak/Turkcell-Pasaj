@@ -136,7 +136,7 @@ const FooterMenu = () => {
         <FooterTitle>Hakkımızda</FooterTitle>
         <FooterMenus>
           {
-            Object.entries(hakkimizda).slice(0, showMoreMenu ? Object.entries(popularProducts).length : 10).map(([key, value]) => (
+            Object.entries(hakkimizda).slice(0, showMoreMenu ? Object.entries(hakkimizda).length : 10).map(([key, value]) => (
               <FooterMenuItem key={key}>
                 <FooterNavLink href={`/${key}`}>
                   {value}
@@ -155,7 +155,7 @@ const FooterMenu = () => {
         <FooterTitle>Popüler Kategoriler</FooterTitle>
         <FooterMenus>
           {
-            Object.entries(popular).slice(0, showMorePopular ? Object.entries(popularProducts).length : 10).map(([key, value]) => (
+            Object.entries(popular).slice(0, showMorePopular ? Object.entries(popular).length : 10).map(([key, value]) => (
               <FooterMenuItem key={key}>
                 <FooterNavLink href={`/${key}`}>
                   {value}
@@ -174,7 +174,7 @@ const FooterMenu = () => {
         <FooterTitle>Markalar</FooterTitle>
         <FooterMenus>
           {
-            Object.entries(markalar).slice(0, showMoreMarka ? Object.entries(popularProducts).length : 10).map(([key, value]) => (
+            Object.entries(markalar).slice(0, showMoreMarka ? Object.entries(markalar).length : 10).map(([key, value]) => (
               <FooterMenuItem key={key}>
                 <FooterNavLink href={`/${key}`}>
                   {value}
@@ -193,7 +193,7 @@ const FooterMenu = () => {
         <FooterTitle>Hakkımızda</FooterTitle>
         <FooterMenus>
           {
-            Object.entries(help).slice(0, showMoreHelp ? Object.entries(popularProducts).length : 10).map(([key, value]) => (
+            Object.entries(help).slice(0, showMoreHelp ? Object.entries(help).length : 10).map(([key, value]) => (
               <FooterMenuItem key={key}>
                 <FooterNavLink href={`/${key}`}>
                   {value}
@@ -212,7 +212,7 @@ const FooterMenu = () => {
         <FooterTitle>Özel Günler & Kampanyalar</FooterTitle>
         <FooterMenus>
           {
-            Object.entries(kampanyalar).slice(0, showMoreKampanya ? Object.entries(popularProducts).length : 10).map(([key, value]) => (
+            Object.entries(kampanyalar).slice(0, showMoreKampanya ? Object.entries(kampanyalar).length : 10).map(([key, value]) => (
               <FooterMenuItem key={key}>
                 <FooterNavLink href={`/${key}`}>
                   {value}
