@@ -73,7 +73,7 @@ const Slider = () => {
 
     const [swiper, setSwiper] = useState<string>('/images/sliders/3Taksit-hero-banner-web.webp')
 
-    const handleSlide = (swiper: string) => {
+    const handleSlide = (swiper: any) => {
         const activeIndex = swiper.activeIndex;
         setSwiper(sliders[activeIndex].image)
     }

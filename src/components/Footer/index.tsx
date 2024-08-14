@@ -6,7 +6,7 @@ import FooterCopyright from './FooterCopyright'
 import { Container } from '@/styles/Global'
 import { Footer } from '@/styles/Footer/FooterStyle'
 
-const index = () => {
+const FooterIndex = () => {
     return (
         <>
             <Footer>
@@ -21,4 +21,4 @@ const index = () => {
     )
 }
 
-export default index
+export default FooterIndex

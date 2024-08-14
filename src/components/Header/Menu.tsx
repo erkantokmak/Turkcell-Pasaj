@@ -121,12 +121,12 @@ const Menu = () => {
     });
     return (
         <>
-            <Row className='menu'>
+            <Row>
                 {Object.entries(menuItems).map(([key, value]) => (
-                    <div className="menuItem" key={key}>
+                    <div key={key}>
                         <MenuItem href={`/category/${key}`}>{value.name}</MenuItem>
                         {value.subcategories && (
-                            <SubMenu className="subMenu">
+                            <SubMenu>
                                 <Row alignItems='flex-start' justifyContent='flex-start'>
                                     <Column xs={12} md={6} justifyContent='flex-start' alignItems='flex-start'>
                                         {Object.entries(value.subcategories).map(([subKey, subValue]) => (

@@ -7,6 +7,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useSession } from 'next-auth/react'
 import React, { useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
+import { toast } from 'react-toastify'
 
 type FaqsProps = {
   data: Product
@@ -27,8 +28,7 @@ const Faqs: React.FC<FaqsProps> = ({ data }) => {
   const { mutate } = useMutation({
     mutationFn: () => fetchProductQuestions(data.id as string),
     onSuccess: () => {
-      // mesaj ekle
-      console.log("başarılı")
+      toast.success('Soru başarıyla gönderildi.')
       queryClient.invalidateQueries({ queryKey: ['product'] })
     }
   })
@@ -106,7 +106,7 @@ const Faqs: React.FC<FaqsProps> = ({ data }) => {
           </Row>
           {
             filteredFaqs.map((question, index) => (
-              <FaqsContent>
+              <FaqsContent key={index}>
                 <FaqsItem>
                   <Row alignItems='center' margin='0 0 8px 0' justifyContent='flex-start'>
                     <Title fsize='14px' fcolor='#8e9fad' margin='0 10px 0 0'>Soru</Title>

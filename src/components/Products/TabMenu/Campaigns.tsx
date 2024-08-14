@@ -36,7 +36,7 @@ const Campaigns: React.FC = () => {
         </Row>
         {
           campaigns?.slice(0, 2).map((campaign) => (
-            <CampaignsContainer>
+            <CampaignsContainer key={campaign.id}>
               <Row>
                 <CampaignsImage>
                   <Image src={`/images/campaigns/${campaign.image}`} alt='Kampanya' fill objectFit='cover' />

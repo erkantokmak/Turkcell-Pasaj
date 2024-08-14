@@ -14,7 +14,7 @@ const Details: React.FC<DetailsProps> = ({ data }) => {
           <DetailContent>
             {
               Object.entries(data?.details).map(([key, value]) => (
-                <DetailItem>
+                <DetailItem key={key}>
                   <Title fsize='16px' fcolor='#253342' fweight='700'>
                     {key.toUpperCase()}
                   </Title>

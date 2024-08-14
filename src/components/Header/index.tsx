@@ -5,7 +5,7 @@ import Menu from './Menu'
 import { Container } from '@/styles/Global'
 import Breadcumb from './Breadcumb'
 
-const index = () => {
+const HeaderIndex = () => {
     return (
         <>
             <Container>
@@ -20,4 +20,4 @@ const index = () => {
     )
 }
 
-export default index
+export default HeaderIndex

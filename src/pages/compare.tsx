@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react'
 
-const compare: React.FC = () => {
+const Compare: React.FC = () => {
   const selectedProducts = useCompareStore((state) => state.selectedProducts);
   return (
     <>
@@ -29,7 +29,7 @@ const compare: React.FC = () => {
 
                 {
                   Object.entries(product?.details).map(([key, value]) => (
-                    <CompareDetailItem>
+                    <CompareDetailItem key={key}>
                       <Title fsize='16px' fcolor='#253342' fweight='700'>
                         {key.toUpperCase()}
                       </Title>
@@ -50,4 +50,4 @@ const compare: React.FC = () => {
   );
 };
 
-export default compare
+export default Compare

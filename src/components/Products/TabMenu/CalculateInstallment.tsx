@@ -17,7 +17,7 @@ const CalculateInstallment: React.FC<CalculateInstalmentProps> = ({ price, image
 
     const [results, setResults] = useState<InstallmentResult[]>([]);
 
-    const calculateInstallments = (price: number, installmentsArray: number[]): InstallmentResult[] => {
+    const calculateInstallments = (price: number, installmentsArray: number[]): any => {
         return installmentsArray.map((installments) => {
             const baseInstallmentAmount = price / installments;
             const installmentAmount = baseInstallmentAmount.toFixed(2);
@@ -25,7 +25,7 @@ const CalculateInstallment: React.FC<CalculateInstalmentProps> = ({ price, image
             for (let i = 1; i <= installments; i++) {
                 totalAmount += baseInstallmentAmount * (1 + 0.03 * i);
             }
-            totalAmount = parseFloat(totalAmount.toFixed(2).toLocaleString('tr-TR'));
+            totalAmount = parseFloat(totalAmount.toFixed(2));
 
             return { installments, installmentAmount, totalAmount };
         });

@@ -6,7 +6,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useSession } from 'next-auth/react'
 import React from 'react'
 
-const favorites = () => {
+const Favorites = () => {
     const { data: session } = useSession();
     const id = (session?.user as { id: string })?.id
 
@@ -37,12 +37,6 @@ const favorites = () => {
                                     <SingleProduct product={product} />
                                 </GridColumn>
                             ))}
-                        {
-                            favorites?.map((product: Product, index: number) => (
-                                <GridColumn key={index} >
-                                    <SingleProduct product={product} />
-                                </GridColumn>
-                            ))}
                     </Grid>
                 </Row>
             </Container>
@@ -50,4 +44,4 @@ const favorites = () => {
     )
 }
 
-export default favorites
+export default Favorites

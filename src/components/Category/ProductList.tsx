@@ -14,8 +14,8 @@ const ProductList: React.FC<ProductListProps> = ({ data }) => {
     <>
       <Grid columns={3} gap={'10px'}>
         {data.map((product) => (
-          <GridColumn key={crypto.randomUUID()}>
-            <SingleProduct product={product} key={product.id} />
+          <GridColumn key={product.id}>
+            <SingleProduct product={product} />
           </GridColumn>
         ))}
       </Grid>

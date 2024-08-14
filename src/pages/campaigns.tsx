@@ -7,7 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
 import React from 'react'
 
-const campaigns = () => {
+const Campaigns = () => {
     const { data: campaigns } = useQuery<Campaign[]>({
         queryKey: ["campaigns"],
         queryFn: getAllCampaigns,
@@ -18,7 +18,7 @@ const campaigns = () => {
                 <>
                     {
                         campaigns?.map((campaign) => (
-                            <CampaignsContainer>
+                            <CampaignsContainer key={campaign.id}>
                                 <Row>
                                     <CampaignsImage>
                                         <Image src={`/images/campaigns/${campaign.image}`} alt='Kampanya' fill objectFit='cover' />
@@ -44,4 +44,4 @@ const campaigns = () => {
     )
 }
 
-export default campaigns
+export default Campaigns

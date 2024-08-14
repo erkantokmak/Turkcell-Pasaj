@@ -57,8 +57,8 @@ const PopularCategory = () => {
             </Row>
             <Row gap='20px' padding='20px 0px 30px 0px'>
                 {categories.map((category, index) => (
-                    <Row>
-                        <CategoryItem key={index} alignItems='center' justifyContent='flex-start' xs={1} md={1} lg={1}>
+                    <Row key={index}>
+                        <CategoryItem  alignItems='center' justifyContent='flex-start' xs={1} md={1} lg={1}>
                             <CategoryImage width='82px' height='82px' >
                                 <Image src={category.image} alt={category.name} fill objectFit='contain' />
                             </CategoryImage>
