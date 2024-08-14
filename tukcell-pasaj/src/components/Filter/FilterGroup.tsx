@@ -52,6 +52,7 @@ const FilterGroup: React.FC<FilterGroupProps> = ({ onFilterChange, products }) =
   
 
   return (
+    <>
     <FilterCard>
       <FilterItems isOpen={true} title={'Markalar'}>
         <Row margin='0 0 20px 0'>
@@ -116,6 +117,7 @@ const FilterGroup: React.FC<FilterGroupProps> = ({ onFilterChange, products }) =
         ))}
       </FilterItems>
     </FilterCard>
+    </>
   );
 };
 

@@ -13,6 +13,7 @@ const Sorting: React.FC<SortingProps> = ({ onFilterChange }) => {
   };
 
   return (
+    <>
     <FilterCard>
       <FilterItems title={'Sıralama'} isOpen={false}>
         <Column justifyContent='flex-start' alignItems='flex-start' gap='10px'>
@@ -74,6 +75,7 @@ const Sorting: React.FC<SortingProps> = ({ onFilterChange }) => {
         </Column>
       </FilterItems>
     </FilterCard>
+    </>
   );
 };
 

@@ -1,3 +1,4 @@
+import { PaginationButton, PaginationNumber, PaginationWrapper } from '@/styles/Category/Filter';
 import React from 'react';
 
 type PaginationProps = {
@@ -8,7 +9,7 @@ type PaginationProps = {
 
 const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPageChange }) => {
   const pageNumbers = [];
-  
+
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
@@ -26,24 +27,26 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
   };
 
   return (
-    <div>
-      <button onClick={handlePrevClick} disabled={currentPage === 1}>
-        {'<'}
-      </button>
-      {pageNumbers.slice(0, 10).map((number) => (
-        <button
-          key={number}
-          onClick={() => onPageChange(number)}
+    <>
+      <PaginationWrapper>
+        <PaginationButton onClick={handlePrevClick} disabled={currentPage === 1}>
+          {'<'}
+        </PaginationButton>
+        {pageNumbers.slice(0, 10).map((number) => (
+          <PaginationNumber
+            key={number}
+            onClick={() => onPageChange(number)}
           // active={currentPage === number}
-        >
-          {number}
-        </button>
-      ))}
-      {totalPages > 10 && <span>...</span>}
-      <button onClick={handleNextClick} disabled={currentPage === totalPages}>
-        {'>'}
-      </button>
-    </div>
+          >
+            {number}
+          </PaginationNumber>
+        ))}
+        {totalPages > 10 && <span>...</span>}
+        <PaginationButton onClick={handleNextClick} disabled={currentPage === totalPages}>
+          {'>'}
+        </PaginationButton>
+      </PaginationWrapper>
+    </>
   );
 };
 

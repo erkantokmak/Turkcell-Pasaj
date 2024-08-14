@@ -5,6 +5,7 @@ import SingleProduct from '../Products/SingleProduct'
 import { Product } from '@/types/product'
 import Image from 'next/image'
 import { Navigation } from 'swiper/modules'
+import { StyledSwiper } from '@/styles/Slider'
 
 type BestSellersProps = {
   data: Product[]
@@ -28,23 +29,39 @@ const BestSellers: React.FC<BestSellersProps> = ({ data }) => {
 
   const [currentCategory, setCurrentCategory] = React.useState<string>('cep-telefonu');
   const filteredData = data?.filter((product: Product) => product.category === currentCategory && product.bestOffer === true);
-  console.log(currentCategory)
-  console.log(filteredData)
 
 
   return (
     <>
-      <Row justifyContent='start' padding='50px 0 0 0'>
+      <Row justifyContent='start' padding='50px 0 30px 0'>
         <Title fsize='34px' fcolor='#253342' fweight='700' lineHeight='1.24' textAlign='left'>
           Çok Satanlar
         </Title>
       </Row>
-      <Row>
-        <Swiper
-          spaceBetween={5}
-          slidesPerView={6}
+      <Row margin='30px 0'>
+        <StyledSwiper
           navigation={true}
           modules={[Navigation]}
+          breakpoints={
+            {
+              0: {
+                slidesPerView: 3,
+                spaceBetween: 5
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 5
+              },
+              1024: {
+                slidesPerView: 6,
+                spaceBetween: 5
+              },
+              1200: {
+                slidesPerView: 6,
+                spaceBetween: 5
+              }
+            }
+          }
         >
           {
             categoryItems.map((item, index) => (
@@ -58,44 +75,9 @@ const BestSellers: React.FC<BestSellersProps> = ({ data }) => {
               </SwiperSlide>
             ))
           }
-        </Swiper>
+        </StyledSwiper>
       </Row>
       <Grid columns={4} gap='20px'>
-        {filteredData.slice(0, 8).map((product: Product, index: number) => (
-          <GridColumn  key={index} >
-            <SingleProduct product={product} />
-          </GridColumn>
-        ))}
-        {filteredData.slice(0, 8).map((product: Product, index: number) => (
-          <GridColumn  key={index} >
-            <SingleProduct product={product} />
-          </GridColumn>
-        ))}
-        {filteredData.slice(0, 8).map((product: Product, index: number) => (
-          <GridColumn  key={index} >
-            <SingleProduct product={product} />
-          </GridColumn>
-        ))}
-        {filteredData.slice(0, 8).map((product: Product, index: number) => (
-          <GridColumn  key={index} >
-            <SingleProduct product={product} />
-          </GridColumn>
-        ))}
-        {filteredData.slice(0, 8).map((product: Product, index: number) => (
-          <GridColumn  key={index} >
-            <SingleProduct product={product} />
-          </GridColumn>
-        ))}
-        {filteredData.slice(0, 8).map((product: Product, index: number) => (
-          <GridColumn  key={index} >
-            <SingleProduct product={product} />
-          </GridColumn>
-        ))}
-        {filteredData.slice(0, 8).map((product: Product, index: number) => (
-          <GridColumn  key={index} >
-            <SingleProduct product={product} />
-          </GridColumn>
-        ))}
         {filteredData.slice(0, 8).map((product: Product, index: number) => (
           <GridColumn  key={index} >
             <SingleProduct product={product} />

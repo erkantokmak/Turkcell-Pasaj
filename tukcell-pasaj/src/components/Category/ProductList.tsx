@@ -11,13 +11,15 @@ const ProductList: React.FC<ProductListProps> = ({ data }) => {
 
 
   return (
-    <Grid columns={3} gap={'30px'}>
-      {data.map((product) => (
-        <GridColumn>
-        <SingleProduct product={product} key={product.id} />
-        </GridColumn>
-      ))}
-    </Grid>
+    <>
+      <Grid columns={3} gap={'10px'}>
+        {data.map((product) => (
+          <GridColumn key={crypto.randomUUID()}>
+            <SingleProduct product={product} key={product.id} />
+          </GridColumn>
+        ))}
+      </Grid>
+    </>
   )
 }
 

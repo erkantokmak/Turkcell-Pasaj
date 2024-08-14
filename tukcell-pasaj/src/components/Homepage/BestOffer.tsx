@@ -9,7 +9,6 @@ type BestOfferProps = {
 }
 
 const BestOffer: React.FC<BestOfferProps> = ({ data }) => {
-  console.log(data)
   return (
     <>
       <Row justifyContent='start' padding='50px 0 0 0'>
@@ -17,11 +16,30 @@ const BestOffer: React.FC<BestOfferProps> = ({ data }) => {
           En İyi Teklifler
         </Title>
       </Row>
-      <Row padding='50px 0'>
+      <Row padding='50px 0 50px 0'>
         <Swiper
           spaceBetween={10}
-          slidesPerView={4}
-        >
+          breakpoints={
+            {
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 10
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 10
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 10
+              },
+              1200: {
+                slidesPerView: 4,
+                spaceBetween: 10
+              }
+            }
+          }
+          >
           {
             data.filter((product: Product) => product.bestOffer === true)
               .map((product: Product, index: number) => (

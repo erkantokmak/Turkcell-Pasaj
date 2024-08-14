@@ -8,14 +8,16 @@ import { Footer } from '@/styles/Footer/FooterStyle'
 
 const index = () => {
     return (
-        <Footer>
-            <Container>
-                <FooterMenu />
-                <FooterBottom />
-                <FooterBrands />
-                <FooterCopyright />
-            </Container>
-        </Footer>
+        <>
+            <Footer>
+                <Container>
+                    <FooterMenu />
+                    <FooterBottom />
+                    <FooterBrands />
+                    <FooterCopyright />
+                </Container>
+            </Footer>
+        </>
     )
 }
 

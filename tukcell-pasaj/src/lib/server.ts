@@ -1,5 +1,5 @@
 import { CartItem } from "@/types/cart"
-import { Question } from "@/types/product"
+import { Comment, Product, Question } from "@/types/product"
 
 const url = 'http://localhost:3001'
 
@@ -28,22 +28,6 @@ export const fetchProductById = async (id: string) => {
     }
     return response.json();
 }
-
-export const submitQuestion = async (productId: string, questionData: Question) => {
-    const response = await fetch(`http://localhost:3001/products/${productId}`, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({questions: questionData}),
-    });
-
-    if (!response.ok) {
-        throw new Error('Failed to submit question');
-    }
-
-    return response.json();
-};
 
 export const getAllCampaigns = async () => {
     const response = await fetch(`${url}/campaigns`);
@@ -83,6 +67,32 @@ export const updateUserBasket = async ({uid, cart}: {uid: string, cart: CartItem
 };
 
 
+export const fetchFavoritesById = async (id: string) => {
+    const response = await fetch(`${url}/users/${id}`);
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const data = await response.json()
+    return data.favorites
+}
+
+export const updateUserFavorites = async ({uid, favorite}: {uid: string, favorite: Product[]}) => {
+    const res = await fetch(`${url}/users/${uid}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ favorites: favorite }),
+    });
+
+    if (!res.ok) {
+        throw new Error("An error occurred while updating the favorites product");
+    }
+
+    return res.json();
+};
+
+
 export const fetchCartById = async (id: string) => {
     const response = await fetch(`${url}/users/${id}`);
     if (!response.ok) {
@@ -91,3 +101,39 @@ export const fetchCartById = async (id: string) => {
     const data = await response.json()
     return data.cart
 }
+
+export const submitQuestion = async ({id, question}:{id: string | number, question: Question[]}) => {
+    const response = await fetch(`${url}/products/${id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({questions : question}),
+    });
+    if (!response.ok) {
+        throw new Error('Failed to submit question');
+    }
+}
+
+export const fetchProductQuestions = async (id: string) => {
+    const response = await fetch(`${url}/products/${id}`);
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const data = await response.json()
+    return data.questions
+}
+
+export const submitReview = async ({ id, reviews }: { id: string | number, reviews: Comment[] }) => {
+    const response = await fetch(`${url}/products/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ comments: reviews }),
+    });
+  
+    if (!response.ok) {
+      throw new Error('Failed to submit review');
+    }
+  };

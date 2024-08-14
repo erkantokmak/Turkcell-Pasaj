@@ -41,8 +41,7 @@ export const ContratLabel = styled.label`
   width: 60px;
   height: 30px;
   border-radius: 100px;
-  background-color: #d3d3d3;
-  border: 2px solid gray;
+  background-color: #dee3ed;
   position: relative;
   transition: background-color 0.2s;
  
@@ -54,13 +53,12 @@ export const ContratLabel = styled.label`
 export const ContratButton = styled.span`
   content: "";
   position: absolute;
-  top: 1px;
+  top: 2px;
   left: 2px;
   width: 30px;
   height: 25px;
   border-radius: 45px;
   transition: 0.2s;
-  background: grey;
   background-color: #fff;
   ${ContratInput}:checked + ${ContratLabel} & {
     left: calc(100% - 2px);
@@ -184,4 +182,31 @@ export const FilterCheckWrapper = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+`;
+
+export const PaginationWrapper = styled.div`
+background-color: #fff;
+    border-radius: .9375rem;
+    margin: 3.125rem auto;
+    color: #5f6b76;
+    box-shadow: 0 2px 7px -2px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+`;
+
+export const PaginationNumber = styled.button<{ active?: boolean }>`
+width: 2.5rem;
+height: 2.5rem;
+border-radius: 50%;
+border: none;
+font-size: 1rem;
+font-weight: 700;
+background-color: ${(props) => (props.active ? "#2855ac" : "#fff")};
+color: ${(props) => props.active ? '#fff' : '#5f6b76'};
+`;
+export const PaginationButton = styled(PaginationNumber)`
+color: #2855ac;
 `;

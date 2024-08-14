@@ -22,8 +22,12 @@ font-weight: 700;
 
 export const DropdownContainer = styled.div`
   position: relative;
-  width: 274px;
+  max-width: 274px;
   margin-right: 20px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
 `;
 
 export const DropdownHeader = styled.div`
@@ -56,7 +60,6 @@ export const DropdownItem = styled.li`
   align-items: center;
   &:hover {
     font-weight: 700;
-    background-color: #f0f0f0;
   }
 `;
 
@@ -69,12 +72,16 @@ export const ColorBox = styled.div<{ color?: string }>`
   display: inline-block;
   background-color: ${(props) => props.color || '#000'};
 `;
-
-export const SellerWrapper = styled.label`
+type SellerProps = {
+  isActive: boolean;
+}
+export const SellerWrapper = styled.label<SellerProps>`
 width: 100%;
 height: auto;
-border: 1px solid #dee3ed;
+border: 1px solid; 
+border-color: ${(props) => props.isActive ? '#ffc900' : '#dee3ed'};
 border-radius: .625rem;
+background-color: ${(props) => props.isActive ? '#fff' : '#1e1f2019'};
 padding: 1rem;
 cursor: pointer;
 position: relative;
@@ -118,6 +125,9 @@ cursor: pointer;
 }
 &:hover ${Title} {
 color: #ffc900;
+}
+@media (max-width: 768px) {
+  width: 30%;
 }
 `;
 
@@ -201,6 +211,18 @@ background-color: #5e6b76;
 &:nth-child(3n)::after {
 display: none;
 }
+@media (max-width: 768px) {
+  width: 50%;
+  &:nth-child(2n)::after {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  width: 100%;
+  &:nth-child(1n)::after {
+    display: none;
+  }
+}
 `;
 
 export const FaqsTab = styled.div`
@@ -229,6 +251,14 @@ min-width: 20rem;
 &:focus {
 border: none;
 outline: none;
+}
+@media (max-width: 768px) {
+  width: 100%;
+  min-width: 0;
+}
+@media (max-width: 576px) {
+  width: 100%;
+  min-width: 0;
 }
 `;
 
@@ -299,6 +329,13 @@ export const ModalFooter = styled.div`
 
 export const ReviewsTab = styled(FaqsContent)`
 min-width: 20rem;
+@media (max-width: 768px) {
+  width: 100%;
+}
+@media (max-width: 576px) {
+  width: 100%;
+  min-width: 0;
+}
 `;
 
 export const RatingCount = styled.span`
@@ -346,6 +383,9 @@ export const SortDropdown = styled.select`
     padding: 8px;
     font-size: 16px;
     box-shadow: 2px 0px 26px -1px rgba(0,0,0,0.3);
+  }
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 

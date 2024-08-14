@@ -17,6 +17,14 @@ color: #253342;
 export const SearchWrapper = styled.div`
 position: relative;
 margin-left: 10px;
+@media (max-width: 768px) {
+  margin-left: 0;
+
+}
+@media (max-width: 456px) {
+  margin-left: 0;
+
+}
 `;
 
 export const IconWrapper = styled.div`
@@ -37,11 +45,17 @@ padding: .5rem;
 padding-left: 3rem;
 display:flex;
 color: #253342;
+@media (max-width: 768px) {
+    width: 20rem;
+}
+@media (max-width: 456px) {
+    width: 15rem;
+} 
 `;
 
 export const LoginButton = styled.button`
 padding: 0 32px 0 25px;
-border: 1px solid #fff;
+border: 1px solid #eff2f5;
 border-radius: .5rem;
 color: #253342;
 background-color: #fff;
@@ -101,7 +115,7 @@ export const SubMenu = styled.div`
   width: 100%;
   min-height: 590px;
   background-color: white;
-  z-index: 3;
+  z-index: 1000;
   .menuItem:hover & {
     display: block;
   }
@@ -115,4 +129,10 @@ export const SubMenuItem = styled(Link)`
   &:hover {
     color: #FFC900;
   }
+`;
+
+export const BreadCrumb = styled.div`
+background-color: #f8f8f8;
+padding: 10px 0;
+font-size: 14px;
 `;

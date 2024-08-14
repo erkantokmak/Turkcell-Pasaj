@@ -24,40 +24,40 @@ export const getStaticProps = async () => {
 }
 const Campaigns: React.FC = () => {
   const { data: campaigns } = useQuery<Campaign[]>({
-    queryKey: ["products"],
+    queryKey: ["campaigns"],
     queryFn: getAllCampaigns,
   });
-  console.log(campaigns)
 
   return (
-    <Container>
-      <Row margin='80px 0 40px 0'>
-        <Title fsize='1rem' fcolor='#5F6B76' >Anlaşmalı olduğumuz bankalarla alışverişini kredi kartına taksit seçeneği ile hızlı, kolay ve güvenli bir şekilde tamamlayabilirsin.</Title>
-      </Row>
-      {
-        campaigns?.slice(0, 2).map((campaign) => (
-          <CampaignsContainer>
-            <Row>
-              <CampaignsImage>
-                <Image src={`/images/campaigns/${campaign.image}`} alt='Kampanya' fill objectFit='cover' />
-              </CampaignsImage>
-              <CampaignsContent>
-                <Column alignItems='flex-start'>
-                  <Title fsize='1.3125rem' fweight='700' fcolor='#253342' lineHeight='1.24' textAlign='start'>
-                    {campaign.name}
-                  </Title>
-                  <Title fsize='1rem' fcolor='#5f6b76' lineHeight='1.5' margin='0 0 2.5rem 0' textAlign='start'>
-                    {campaign.description}
-                  </Title>
+    <>
+      <Container>
+        <Row margin='80px 0 40px 0'>
+          <Title fsize='1rem' fcolor='#5F6B76' >Anlaşmalı olduğumuz bankalarla alışverişini kredi kartına taksit seçeneği ile hızlı, kolay ve güvenli bir şekilde tamamlayabilirsin.</Title>
+        </Row>
+        {
+          campaigns?.slice(0, 2).map((campaign) => (
+            <CampaignsContainer>
+              <Row>
+                <CampaignsImage>
+                  <Image src={`/images/campaigns/${campaign.image}`} alt='Kampanya' fill objectFit='cover' />
+                </CampaignsImage>
+                <CampaignsContent>
+                  <Column alignItems='flex-start'>
+                    <Title fsize='1.3125rem' fweight='700' fcolor='#253342' lineHeight='1.24' textAlign='start'>
+                      {campaign.name}
+                    </Title>
+                    <Title fsize='1rem' fcolor='#5f6b76' lineHeight='1.5' margin='0 0 2.5rem 0' textAlign='start'>
+                      {campaign.description}
+                    </Title>
                     <BlueButton width='200px' display='block'>Devamı</BlueButton>
-                </Column>
-              </CampaignsContent>
-            </Row>
-          </CampaignsContainer>
-        ))
-      }
-
-    </Container>
+                  </Column>
+                </CampaignsContent>
+              </Row>
+            </CampaignsContainer>
+          ))
+        }
+      </Container>
+    </>
   )
 }
 

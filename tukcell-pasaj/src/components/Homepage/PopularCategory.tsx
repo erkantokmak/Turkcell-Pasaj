@@ -1,4 +1,4 @@
-import { Row, Title } from '@/styles/Global'
+import { Column, Row, Title } from '@/styles/Global'
 import { CategoryImage, CategoryItem } from '@/styles/Home/HomeStyle'
 import Image from 'next/image'
 import React from 'react'
@@ -57,8 +57,8 @@ const PopularCategory = () => {
             </Row>
             <Row gap='20px' padding='20px 0px 30px 0px'>
                 {categories.map((category, index) => (
-                    <>
-                        <CategoryItem key={index} alignItems='center' justifyContent='flex-start'>
+                    <Row>
+                        <CategoryItem key={index} alignItems='center' justifyContent='flex-start' xs={1} md={1} lg={1}>
                             <CategoryImage width='82px' height='82px' >
                                 <Image src={category.image} alt={category.name} fill objectFit='contain' />
                             </CategoryImage>
@@ -66,7 +66,7 @@ const PopularCategory = () => {
                                 {category.name}
                             </Title>
                         </CategoryItem>
-                    </>
+                    </Row>
                 ))}
             </Row>
         </>

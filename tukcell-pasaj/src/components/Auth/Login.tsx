@@ -6,6 +6,7 @@ import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { AuthButton, AuthInput } from '@/styles/Header/AuthStyle';
 import { Column, Row, YellowButton } from '@/styles/Global';
+import { toast } from 'react-toastify';
 
 const loginSchema = z.object({
     email: z.string().email('Invalid email address'),
@@ -33,11 +34,10 @@ const Login: React.FC<LoginProps> = ({isModalOpen, setModalOpen}) => {
         });
 
         if (result?.error) {
-
-            console.error(result.error);
+            toast.error('E-Posta veya parola hatalı');
         } else {
             setModalOpen(!isModalOpen);
-            // router.push('/');
+            toast.success('Başarıyla giriş yaptınız');
         }
     };
 

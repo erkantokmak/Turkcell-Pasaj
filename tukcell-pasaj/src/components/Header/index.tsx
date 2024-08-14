@@ -14,7 +14,6 @@ const index = () => {
                 <MidHeader />
             <Container>
                 <Menu />
-                <Breadcumb />
             </Container>
 
         </>

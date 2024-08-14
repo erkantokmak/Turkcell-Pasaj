@@ -130,13 +130,14 @@ const FooterMenu = () => {
   };
 
   return (
+    <>
     <Grid columns={6} padding='70px 0 30px 0'>
       <GridColumn>
         <FooterTitle>Hakkımızda</FooterTitle>
         <FooterMenus>
           {
             Object.entries(hakkimizda).slice(0, showMoreMenu ? Object.entries(popularProducts).length : 10).map(([key, value]) => (
-              <FooterMenuItem>
+              <FooterMenuItem key={key}>
                 <FooterNavLink href={`/${key}`}>
                   {value}
                 </FooterNavLink>
@@ -155,7 +156,7 @@ const FooterMenu = () => {
         <FooterMenus>
           {
             Object.entries(popular).slice(0, showMorePopular ? Object.entries(popularProducts).length : 10).map(([key, value]) => (
-              <FooterMenuItem>
+              <FooterMenuItem key={key}>
                 <FooterNavLink href={`/${key}`}>
                   {value}
                 </FooterNavLink>
@@ -174,7 +175,7 @@ const FooterMenu = () => {
         <FooterMenus>
           {
             Object.entries(markalar).slice(0, showMoreMarka ? Object.entries(popularProducts).length : 10).map(([key, value]) => (
-              <FooterMenuItem>
+              <FooterMenuItem key={key}>
                 <FooterNavLink href={`/${key}`}>
                   {value}
                 </FooterNavLink>
@@ -193,7 +194,7 @@ const FooterMenu = () => {
         <FooterMenus>
           {
             Object.entries(help).slice(0, showMoreHelp ? Object.entries(popularProducts).length : 10).map(([key, value]) => (
-              <FooterMenuItem>
+              <FooterMenuItem key={key}>
                 <FooterNavLink href={`/${key}`}>
                   {value}
                 </FooterNavLink>
@@ -212,7 +213,7 @@ const FooterMenu = () => {
         <FooterMenus>
           {
             Object.entries(kampanyalar).slice(0, showMoreKampanya ? Object.entries(popularProducts).length : 10).map(([key, value]) => (
-              <FooterMenuItem>
+              <FooterMenuItem key={key}>
                 <FooterNavLink href={`/${key}`}>
                   {value}
                 </FooterNavLink>
@@ -231,7 +232,7 @@ const FooterMenu = () => {
         <FooterMenus>
           {
             Object.entries(popularProducts).slice(0, showMorePopularProd ? Object.entries(popularProducts).length : 10).map(([key, value]) => (
-              <FooterMenuItem>
+              <FooterMenuItem key={key}>
                 <FooterNavLink href={`/${key}`}>
                   {value}
                 </FooterNavLink>
@@ -246,6 +247,7 @@ const FooterMenu = () => {
         </FooterMenus>
       </GridColumn>
     </Grid>
+    </>
   )
 }
 

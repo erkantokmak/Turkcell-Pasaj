@@ -1,14 +1,27 @@
 import styled from 'styled-components';
 
+export const SingleProductWrap = styled.div<{isModalOpen: boolean}>`
+cursor: pointer;
+&:hover {
+    border-radius: .625rem;
+    border: 2px solid;
+    border-color: ${(props) => props.isModalOpen ? '#000' : '#ffc900'};
+}
+`;
+
 export const ProductWrapper = styled.div`
+position: relative;
 border-radius: .625rem;
-width: 290px;
-height: 450px;
+width: 280px;
+height: 470px;
 background-color: #fff;
 display: flex;
 flex-direction: column;
 position: relative;
 box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
+@media (max-width: 768px) {
+    width: 200px;
+}
 `;
 
 export const ProductContent = styled(ProductWrapper)`
@@ -58,11 +71,19 @@ display: flex;
 justify-content: center;
 flex-direction: column;
 align-items:start;
-height: 64px;
+height: 90px;
 `;
 
 export const FavIcon = styled.div`
 color: #ffc900;
 font-weight: 700;
 font-size: 1.5rem;
+`;
+
+export const FavoriteButton = styled.button`
+background-color: transparent;
+border: none;
+cursor: pointer;
+position: relative;
+z-index: 10;
 `;

@@ -6,7 +6,7 @@ import { auth } from "@/services/firebase";
 const options: NextAuthOptions = {
   providers: [
     CredentialsProvider({
-      name: "Email",
+      name: "Credentials",
       credentials: {
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
@@ -22,7 +22,7 @@ const options: NextAuthOptions = {
             credentials.password
           );
           const user = userCredential.user;
-          const role = 'user';
+          const role = "user"; // Varsayılan olarak "user" rolü atıyoruz
           return { id: user.uid, email: user.email, role };
         } catch (error) {
           throw new Error("Invalid credentials");
@@ -32,7 +32,8 @@ const options: NextAuthOptions = {
   ],
   callbacks: {
     async session({ session, token }) {
-      if (token && token.user) {
+      // Eğer token içinde user varsa, bu bilgiyi session.user'a atıyoruz
+      if (token.user) {
         session.user = token.user as {
           id: string;
           email: string;
@@ -42,12 +43,14 @@ const options: NextAuthOptions = {
       return session;
     },
     async jwt({ token, user }) {
+      // Eğer user bilgisi mevcutsa, bu bilgiyi token.user olarak saklıyoruz
       if (user) {
         token.user = user;
       }
       return token;
     },
     async redirect({ baseUrl }) {
+      // Başarılı oturum açma sonrası yönlendirme için baseUrl'e geri dönüyoruz
       return baseUrl;
     },
   },

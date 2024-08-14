@@ -15,6 +15,7 @@ const Contrats: React.FC<ContratsProps> = ({ onFilterChange }) => {
   };
 
   return (
+    <>
     <FilterCard>
       <Row justifyContent='space-between' padding='16px 20px'>
         <Title fsize='16px' fcolor='#5F6B76' textAlign='left' fweight='500'>Kontratlı Ürünler</Title>
@@ -29,6 +30,7 @@ const Contrats: React.FC<ContratsProps> = ({ onFilterChange }) => {
         </ContratLabel>
       </Row>
     </FilterCard>
+    </>
   );
 };
 

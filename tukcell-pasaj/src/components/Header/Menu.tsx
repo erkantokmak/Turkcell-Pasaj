@@ -1,6 +1,10 @@
-import { Row } from '@/styles/Global';
+import { fetchAllProducts } from '@/lib/server';
+import { Column, Row } from '@/styles/Global';
 import { MenuItem, SubMenu, SubMenuItem } from '@/styles/Header/HeaderStyle';
+import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import SingleProduct from '../Products/SingleProduct';
+import { Product } from '@/types/product';
 
 const Menu = () => {
     const menuItems: { [key: string]: { name: string, subcategories?: { [key: string]: string } } } = {
@@ -110,21 +114,42 @@ const Menu = () => {
             }
         }
     };
+
+    const { data } = useQuery({
+        queryKey: ["products"],
+        queryFn: fetchAllProducts,
+    });
     return (
-        <Row className='menu'>
-            {Object.entries(menuItems).map(([key, value]) => (
-                <div className="menuItem" key={key}>
-                    <MenuItem href={key}>{value.name}</MenuItem>
-                    {value.subcategories && (
-                        <SubMenu className="subMenu">
-                            {Object.entries(value.subcategories).map(([subKey, subValue]) => (
-                                <SubMenuItem key={subKey} href={`${key}/${subKey}`}>{subValue}</SubMenuItem>
-                            ))}
-                        </SubMenu>
-                    )}
-                </div>
-            ))}
-        </Row>
+        <>
+            <Row className='menu'>
+                {Object.entries(menuItems).map(([key, value]) => (
+                    <div className="menuItem" key={key}>
+                        <MenuItem href={`/category/${key}`}>{value.name}</MenuItem>
+                        {value.subcategories && (
+                            <SubMenu className="subMenu">
+                                <Row alignItems='flex-start' justifyContent='flex-start'>
+                                    <Column xs={12} md={6} justifyContent='flex-start' alignItems='flex-start'>
+                                        {Object.entries(value.subcategories).map(([subKey, subValue]) => (
+                                            <SubMenuItem key={subKey} href={`/category/${key}/${subKey}`}>{subValue}</SubMenuItem>
+                                        ))}
+
+                                    </Column>
+                                    <Column xs={12} md={6}>
+                                        <Row gap='20px' margin='30px 0'>
+                                            {
+                                                data?.slice(0, 2).map((item: Product) => (
+                                                    <SingleProduct key={item.id} product={item} />
+                                                ))
+                                            }
+                                        </Row>
+                                    </Column>
+                                </Row>
+                            </SubMenu>
+                        )}
+                    </div>
+                ))}
+            </Row>
+        </>
     );
 }
 

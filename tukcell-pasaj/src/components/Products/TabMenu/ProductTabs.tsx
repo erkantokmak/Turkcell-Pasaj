@@ -29,11 +29,11 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ data }) => {
             case 1:
                 return <Details data={data} />;
             case 2:
-                return <Reviews data={data}/>;
+                return <Reviews data={data} />;
             case 3:
                 return <Faqs data={data} />;
             case 4:
-                return <CreditCart  data={data}/>;
+                return <CreditCart data={data} />;
             case 5:
                 return <Campaigns />;
             case 6:
@@ -45,13 +45,24 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ data }) => {
 
     return (
         <>
-
             <Row>
                 <ProductTabMenu>
                     <Container>
                         <Swiper
-                            slidesPerView={5}
                             spaceBetween={10}
+                            breakpoints={
+                                {
+                                    0: {
+                                        slidesPerView: 2
+                                    },
+                                    768: {
+                                        slidesPerView: 4
+                                    },
+                                    1200: {
+                                        slidesPerView: 5
+                                    }
+                                }
+                            }
                             navigation
                             modules={[Navigation]}
                         >

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Container } from '../Global';
 
 interface ImageProps {
     background: string;
@@ -12,11 +13,17 @@ align-items: center;
 height: 590px;
 `;
 
+export const HomeSliderContainer = styled(Container)`
+padding: 0;
+position: relative;
+`;
+
 export const SliderBackground = styled.div<ImageProps>`
 position: absolute;
-filter: blur(5px);
+filter: blur(2px);
 top: 0;
 left: 0;
+right: 0;
 z-index: -2;
 width: 100%;
 height: 590px;

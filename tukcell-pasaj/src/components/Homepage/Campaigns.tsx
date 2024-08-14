@@ -10,18 +10,18 @@ const Campaigns = () => {
                     Kampanyalar
                 </Title>
             </Row>
-            <Row padding='0 0 50px 0 '>
+            <Row padding='0 0 50px 0 ' gap='20px'>
                 <Column gap='20px'>
                     <ImageWrapper width='780px' height='280px'>
-                        <Image src="/images/banners/36aytaksit-kampanyalar-yatay-webx.webp" alt='36 ay taksit kampanyalar' fill objectFit='contain' />
+                        <Image src="/images/banners/36aytaksit-kampanyalar-yatay-webx.webp" alt='36 ay taksit kampanyalar'  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" fill />
                     </ImageWrapper>
                     <ImageWrapper width='780px' height='280px'>
-                        <Image src="/images/banners/pac-jbl--yatay-web.webp" alt='Jbl Kampanya' fill objectFit='contain' />
+                        <Image src="/images/banners/pac-jbl--yatay-web.webp" alt='Jbl Kampanya'  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" fill  />
                     </ImageWrapper>
                 </Column>
                 <Column>
                     <ImageWrapper width='380px' height='580px'>
-                        <Image src="/images/banners/hk30k-Kampanyalar-Dikey.webp" alt='HK30K Kampanyalar'  fill objectFit='contain'/>
+                        <Image src="/images/banners/hk30k-Kampanyalar-Dikey.webp" alt='HK30K Kampanyalar'  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"  fill />
                     </ImageWrapper>
                 </Column>
             </Row>

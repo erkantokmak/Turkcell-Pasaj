@@ -18,9 +18,9 @@ interface Detail {
     warranty: string;
 }
 
-interface Comment {
-    id: number;
-    userId: number;
+export type Comment = {
+    id: string;
+    userId: string;
     userName: string;
     comment: string;
     rating: number;

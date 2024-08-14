@@ -11,6 +11,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import '@smastrom/react-rating/style.css'
 import { SessionProvider } from "next-auth/react";
+import Breadcumb from "@/components/Header/Breadcumb";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,8 +30,10 @@ export default function App({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
         <HydrationBoundary state={pageProps.dehydratedState}>
+          <ToastContainer />
           <GlobalStyles />
           <Header />
+          <Breadcumb />
           <Component {...pageProps} />
           <Footer />
         </HydrationBoundary>

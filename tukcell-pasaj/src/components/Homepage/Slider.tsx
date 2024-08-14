@@ -1,5 +1,6 @@
 import { Container, ImageWrapper, Row } from '@/styles/Global'
-import { SliderBackground, SliderContainer } from '@/styles/Home/Slider'
+import { HomeSliderContainer, SliderBackground, SliderContainer } from '@/styles/Home/Slider'
+import { SliderWrapper, StyledSwiper } from '@/styles/Slider'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { Navigation } from 'swiper/modules'
@@ -71,42 +72,45 @@ const Slider = () => {
     ]
 
     const [swiper, setSwiper] = useState<string>('/images/sliders/3Taksit-hero-banner-web.webp')
-  
+
     const handleSlide = (swiper: string) => {
         const activeIndex = swiper.activeIndex;
         setSwiper(sliders[activeIndex].image)
     }
 
     return (
-
-        <SliderContainer>
-            <Row>
-                <SliderBackground background={swiper} />
-                <Container>
-                    <Swiper
-                        slidesPerView={1}
-                        spaceBetween={0}
-                        loop={false}
-                        pagination={{
-                            clickable: true
-                        }}
-                        navigation={true}
-                        modules={[Navigation]}
-                        onSlideChange={handleSlide}
-                    >
-                        {
-                            sliders.map(slider => (
-                                <SwiperSlide key={slider.id}>
-                                    <ImageWrapper width='1200px' height='550px'>
-                                        <Image src={slider.image} alt='slider' fill objectFit='contain' />
-                                    </ImageWrapper>
-                                </SwiperSlide>
-                            ))
-                        }
-                    </Swiper>
-                </Container>
-            </Row>
-        </SliderContainer>
+        <>
+            <SliderContainer>
+                <Row>
+                    <SliderBackground background={swiper} />
+                    <HomeSliderContainer>
+                        <Row>
+                            <StyledSwiper
+                                slidesPerView={1}
+                                spaceBetween={0}
+                                loop={false}
+                                pagination={{
+                                    clickable: true
+                                }}
+                                navigation={true}
+                                modules={[Navigation]}
+                                onSlideChange={handleSlide}
+                            >
+                                {
+                                    sliders.map(slider => (
+                                        <SwiperSlide key={slider.id}>
+                                            <ImageWrapper width='1200px' height='550px'>
+                                                <Image src={slider.image} alt='slider' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" fill />
+                                            </ImageWrapper>
+                                        </SwiperSlide>
+                                    ))
+                                }
+                            </StyledSwiper>
+                        </Row>
+                    </HomeSliderContainer>
+                </Row>
+            </SliderContainer>
+        </>
     )
 }
 

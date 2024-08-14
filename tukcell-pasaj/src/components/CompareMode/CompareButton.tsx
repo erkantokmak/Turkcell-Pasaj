@@ -2,20 +2,28 @@ import { ContratButton, ContratInput, ContratLabel } from '@/styles/Category/Fil
 import { Row } from '@/styles/Global'
 import React, { useState } from 'react'
 
-const CompareButton = () => {
-    const [isCompare, setIsCompare] = useState(false);
+type CompareButtonProps = {
+  handleModal: () => void;
+}
+const CompareButton: React.FC<CompareButtonProps> = ({handleModal}) => {
+  const handleChange = () => {
+    console.log('Checkbox changed!');
+    handleModal();  // Fonksiyonu burada çağırıyoruz
+  }
   return (
+    <>
     <Row>
         <ContratInput
           id='compareCheck'
           type="checkbox"
-          checked={isCompare}
-          onChange={e => setIsCompare(e.target.checked)}
+          
+          onChange={handleChange}
         />
         <ContratLabel htmlFor='compareCheck'>
           <ContratButton />
         </ContratLabel>
     </Row>
+    </>
   )
 }
 

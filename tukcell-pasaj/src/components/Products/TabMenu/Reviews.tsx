@@ -1,9 +1,13 @@
+import { fetchProductQuestions, submitReview } from '@/lib/server'
 import { Column, Container, Row, StyledHr, Title } from '@/styles/Global'
 import { BlueButton, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalInput, ModalOverlay, RatingCount, ReviewItem, ReviewsTab, SortDropdown } from '@/styles/Products/DetailPage'
 import { Product } from '@/types/product'
 import { Rating } from '@smastrom/react-rating'
 import React, { useState } from 'react'
 import { FaCheckCircle } from 'react-icons/fa'
+import { useSession } from 'next-auth/react'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { Comment } from '@/types/product'
 
 type ReviewsProps = {
   data: Product
@@ -14,19 +18,48 @@ const Reviews: React.FC<ReviewsProps> = ({ data }) => {
   const [review, setReview] = useState<string>('');
   const [rating, setRating] = useState<number>(0);
   const [sortOption, setSortOption] = useState<string>('Çoktan Aza');
-
+  const {data: session} = useSession();
+  const queryClient = useQueryClient();
+  const uid = (session?.user as { id: string })?.id;
 
   const handleReviewChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setReview(e.target.value)
   }
 
-  const handleSubmit = () => {
-    if (review.trim()) {
-      console.log(review);
+  const { mutate } = useMutation({
+    mutationFn: () => fetchProductQuestions(data.id as string),
+    onSuccess: () => {
+        // mesaj ekle
+        console.log("başarılı")
+        queryClient.invalidateQueries({ queryKey: ['product'] })
+    }
+})
+
+const handleSubmit = async () => {
+  const reviewData: Comment = {
+    id: crypto.randomUUID(),
+    userId: uid,
+    userName: "Product is Testing...", 
+    comment: review, 
+    rating: rating, 
+    like: 0, 
+    date: new Date().toLocaleDateString()
+  };
+  console.log("reviewData", reviewData);
+  const reviews: Comment[] = [...data.comments, reviewData];
+  console.log("reviews", reviews);
+  if (review && rating) {
+    try {
+      await submitReview({ id: data.id, reviews: reviews });
       setModalOpen(false);
-      setReview('');
+      setReview(''); 
+      setRating(0); 
+      mutate();
+    } catch (error) {
+      console.log("error", error);
     }
   }
+};
 
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSortOption(e.target.value);
@@ -48,7 +81,7 @@ const Reviews: React.FC<ReviewsProps> = ({ data }) => {
   });
 
   return (
-    <div>
+    <>
       <Container>
         <Row alignItems='flex-start' justifyContent='space-between' margin='30px 0 0 0'>
           <ReviewsTab>
@@ -67,7 +100,14 @@ const Reviews: React.FC<ReviewsProps> = ({ data }) => {
             </Column>
             <StyledHr />
             <Row alignItems='center' justifyContent='flex-start' margin='20px 0' width='50%'>
-              <BlueButton display='block' width='100%' onClick={() => setModalOpen(true)}>Yorum Yaz</BlueButton>
+              <BlueButton display='block' width='100%' onClick={() =>{ 
+                if(uid){
+                  setModalOpen(true)
+                } else {
+                  //mesaj ekle
+                  alert("Yorum yapabilmek için giriş yapmalısınız.")
+                }
+              }}>Yorum Yaz</BlueButton>
             </Row>
           </ReviewsTab>
           
@@ -138,8 +178,7 @@ const Reviews: React.FC<ReviewsProps> = ({ data }) => {
           </Row>
         )}
       </Container>
-
-    </div>
+    </>
   )
 }
 

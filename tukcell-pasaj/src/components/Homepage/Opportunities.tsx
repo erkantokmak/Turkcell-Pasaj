@@ -1,4 +1,5 @@
 import { ImageWrapper, Row, Title } from '@/styles/Global'
+import { StyledSwiper } from '@/styles/Slider'
 import Image from 'next/image'
 import React from 'react'
 import { Navigation } from 'swiper/modules'
@@ -49,7 +50,7 @@ const Opportunities = () => {
                 </Title>
             </Row>
             <Row padding='0 0 50px 0'>
-                <Swiper
+                <StyledSwiper
                     slidesPerView={4}
                     spaceBetween={0}
                     loop={false}
@@ -58,6 +59,24 @@ const Opportunities = () => {
                     }}
                     navigation={true}
                     modules={[Navigation]}
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 1,
+                            spaceBetween: 0
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 0
+                        },
+                        1024: {
+                            slidesPerView: 4,
+                            spaceBetween: 0
+                        },
+                        1200: {
+                            slidesPerView: 4,
+                            spaceBetween: 0
+                        }
+                    }}
                 >
                     {
                         sliders.map(slider => (
@@ -68,7 +87,7 @@ const Opportunities = () => {
                             </SwiperSlide>
                         ))
                     }
-                </Swiper>
+                </StyledSwiper>
             </Row>
         </>
     )

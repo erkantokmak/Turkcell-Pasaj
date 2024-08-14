@@ -9,6 +9,7 @@ import { signIn } from 'next-auth/react';
 import { AuthButton, AuthInput } from '@/styles/Header/AuthStyle';
 import { Column } from '@/styles/Global';
 import { addUserToDB } from '@/lib/server';
+import { toast } from 'react-toastify';
 
 const registerSchema = z.object({
   email: z.string().email('Invalid email address'),
@@ -37,16 +38,19 @@ const SignUp = () => {
           email: data.email,
           password: data.password,
         });
-        await addUserToDB({ email: data.email, id: userCredential.user.uid, role: 'user', cart: [], orders: [], name: "", surname: "", adress: ""});
+        await addUserToDB({ email: data.email, id: userCredential.user.uid, role: 'user', cart: [], orders: [], favorites: [],  name: "", surname: "", adress: ""});
         if (!result?.error) {
           router.push('/'); 
+          toast.success('Başarıyla kayıt oldunuz');
         }
       }
     } catch (error: any) {
-      console.error('Registration error:', error.message);
+      toast.error("Bir Hata oluştu.");
     }
   };
   return (
+    <>
+   
     <form onSubmit={handleSubmit(onSubmit)}>
     <Column gap='5px'>
       <AuthInput
@@ -73,6 +77,7 @@ const SignUp = () => {
       <AuthButton type="submit">Register</AuthButton>
         </Column>
     </form>
+    </>
   );
 }
 

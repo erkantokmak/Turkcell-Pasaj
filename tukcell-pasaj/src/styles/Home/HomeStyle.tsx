@@ -3,6 +3,7 @@ import { Column, ImageWrapper } from '../Global';
 
 export const CategoryItem = styled(Column)`
 height: 145px;
+width: 100%;
 `;
 
 export const CategoryImage = styled(ImageWrapper)`

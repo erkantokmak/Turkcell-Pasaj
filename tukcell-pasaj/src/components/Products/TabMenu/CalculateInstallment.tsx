@@ -40,14 +40,14 @@ const CalculateInstallment: React.FC<CalculateInstalmentProps> = ({ price, image
     }, [price]);
 
     return (
-        <div>
+        <>
             <BankTable>
                 <BankTableThead>
                     <tr>
                         <BankTableTh></BankTableTh>
                         <BankTableTh>
                             <ImageWrapper width='100px' height='100px'>
-                                <Image src={`/images/banks/${image}`} alt='Banka Logo' fill objectFit='contain' />
+                                <Image src={`/images/banks/${image}`} alt='Banka Logo' fill style={{objectFit:'contain'}}  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                             </ImageWrapper>
                         </BankTableTh>
                         <BankTableTh></BankTableTh>
@@ -70,7 +70,7 @@ const CalculateInstallment: React.FC<CalculateInstalmentProps> = ({ price, image
                     ))}
                 </BankTableTbody>
             </BankTable>
-        </div>
+        </>
     )
 }
 

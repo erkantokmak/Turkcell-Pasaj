@@ -13,12 +13,14 @@ type FilterProps = {
 
 const index: React.FC<FilterProps> = ({data, onFilterChange},categoryName) => {
   return (
+    <>
     <Column gap='20px' padding='0' margin='0'>
       <Category onFilterChange={onFilterChange} products={data} />
       <Sorting onFilterChange={onFilterChange} />
       <Contrats onFilterChange={onFilterChange}/>
       <FilterGroup  onFilterChange={onFilterChange} products={data}/>
     </Column>
+    </>
   )
 }
 

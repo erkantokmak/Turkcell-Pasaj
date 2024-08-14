@@ -7,38 +7,38 @@ import { useRouter } from 'next/router';
 const TopHeader = () => {
     const router = useRouter();
     return (
-        <Container>
-            <Row padding='17px 0px'>
-                <Column alignItems="flex-start" justifyContent='center'>
-                    <NavLink href="/">
-                        <Row margin='0px 10px 0px 0px'>
-                            <ImageWrapper width='32px' height='32px'>
-                                <Image src="/images/mini-logo.png" alt="logo" fill objectFit='contain' />
-                            </ImageWrapper>
-                            turkcell.com.tr
-                        </Row>
-                    </NavLink>
-                </Column>
-                <Column alignItems="flex-end" justifyContent='center'>
-                    <NavWrapper>
-                        <NavLink href="#">Favorilerim</NavLink>
-                        <NavLink href="#">Kampanyalar</NavLink>
-                        {router.pathname === '/' &&
-                            <>
-                                <NavLink href="#">Yardım</NavLink>
-                                <NavLink href="#">Neden Pasaj?</NavLink>
-                                <NavLink href="#">Pasaj Blog</NavLink>
-                                <NavLink href="#">Sipariş Sorgulama</NavLink>
-                            </>
-                        }
-                    </NavWrapper>
-                </Column>
-            </Row>
-            <Row>
-
-            </Row>
-
-        </Container>
+        <>
+            <Container>
+                <Row padding='17px 0px'>
+                    <Column xs={12} md={6} alignItems="flex-start" justifyContent='center'>
+                        <NavLink href="/">
+                            <Row margin='0px 10px 0px 0px'>
+                                <ImageWrapper width='32px' height='32px'>
+                                    <Image src="/images/mini-logo.png" alt="logo" fill style={{ objectFit: 'contain' }} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                                </ImageWrapper>
+                                turkcell.com.tr
+                            </Row>
+                        </NavLink>
+                    </Column>
+                    <Column xs={12} md={6} alignItems="flex-end" justifyContent='center'>
+                        <NavWrapper>
+                            <NavLink href="/favorites">Favorilerim</NavLink>
+                            <NavLink href="/campaigns">Kampanyalar</NavLink>
+                            {router.pathname === '/' &&
+                                <>
+                                    <NavLink href="#">Yardım</NavLink>
+                                    <NavLink href="#">Neden Pasaj?</NavLink>
+                                    <NavLink href="#">Pasaj Blog</NavLink>
+                                    <NavLink href="#">Sipariş Sorgulama</NavLink>
+                                </>
+                            }
+                        </NavWrapper>
+                    </Column>
+                </Row>
+                <Row>
+                </Row>
+            </Container>
+        </>
     )
 }
 

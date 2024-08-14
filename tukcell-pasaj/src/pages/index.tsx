@@ -16,7 +16,8 @@ import localFont from 'next/font/local'
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
 import { fetchAllProducts } from "@/lib/server";
 
-const Greycliff = localFont({ src: './GreycliffCF-Medium.woff2' })
+
+const Greycliff = localFont({ src: './GreycliffCF-Bold.woff2' })
 
 
 export const getStaticProps = async () => {
@@ -39,7 +40,7 @@ export default function Home() {
     queryKey: ["products"],
     queryFn: fetchAllProducts,
   });
-  console.log(data)
+
 
   return (
     <>
@@ -50,6 +51,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={Greycliff.className}>
+       
         <Slider />
         <Container>
           <PopularCategory />

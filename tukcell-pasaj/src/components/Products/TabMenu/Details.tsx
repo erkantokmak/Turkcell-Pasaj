@@ -4,28 +4,30 @@ import { Product } from '@/types/product'
 import React from 'react'
 
 type DetailsProps = {
-data: Product;
+  data: Product;
 }
-const Details: React.FC<DetailsProps> = ({data}) => {
+const Details: React.FC<DetailsProps> = ({ data }) => {
   return (
-    <DetailTab>
-      <Container>
-        <DetailContent>
-          {
-            Object.entries(data?.details).map(([key, value]) => (
-              <DetailItem>
-                <Title fsize='16px' fcolor='#253342' fweight='700'>
-                  {key.toUpperCase()}
-                </Title>
-                <Title fsize='14px' fcolor='#5F6B76'>
-                  {value.toUpperCase()}
-                </Title>
-              </DetailItem>
-            ))
-          }
-        </DetailContent>
-      </Container>
-    </DetailTab>
+    <>
+      <DetailTab>
+        <Container>
+          <DetailContent>
+            {
+              Object.entries(data?.details).map(([key, value]) => (
+                <DetailItem>
+                  <Title fsize='16px' fcolor='#253342' fweight='700'>
+                    {key.toUpperCase()}
+                  </Title>
+                  <Title fsize='14px' fcolor='#5F6B76'>
+                    {String(value).toUpperCase()}
+                  </Title>
+                </DetailItem>
+              ))
+            }
+          </DetailContent>
+        </Container>
+      </DetailTab>
+    </>
   )
 }
 
