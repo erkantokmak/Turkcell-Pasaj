@@ -78,7 +78,7 @@ const BestSellers: React.FC<BestSellersProps> = ({ data }) => {
         </StyledSwiper>
       </Row>
       <Grid columns={4} gap='20px'>
-        {filteredData && filteredData.slice(0, 8).map((product: Product, index: number) => (
+        {filteredData.length > 0 && filteredData.slice(0, 8).map((product: Product, index: number) => (
           <GridColumn  key={index} >
             <SingleProduct product={product} />
           </GridColumn>

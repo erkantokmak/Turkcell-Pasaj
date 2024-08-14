@@ -40,7 +40,7 @@ const LastViews: React.FC<LastViewsProps> = ({data}) => {
           }
         >
           {
-            data && data.slice(0,4)
+            data.length > 0 && data.slice(0,4)
               .map((product: Product, index: number) => (
                 <SwiperSlide key={index}>
                   <SingleProduct product={product} />

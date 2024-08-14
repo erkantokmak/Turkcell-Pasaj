@@ -35,7 +35,7 @@ const Campaigns: React.FC = () => {
           <Title fsize='1rem' fcolor='#5F6B76' >Anlaşmalı olduğumuz bankalarla alışverişini kredi kartına taksit seçeneği ile hızlı, kolay ve güvenli bir şekilde tamamlayabilirsin.</Title>
         </Row>
         {
-          campaigns && campaigns.slice(0, 2).map((campaign) => (
+          campaigns && campaigns.length > 0 && campaigns.slice(0, 2).map((campaign) => (
             <CampaignsContainer key={campaign.id}>
               <Row>
                 <CampaignsImage>

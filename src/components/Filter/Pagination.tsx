@@ -32,7 +32,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
         <PaginationButton onClick={handlePrevClick} disabled={currentPage === 1}>
           {'<'}
         </PaginationButton>
-        {pageNumbers.slice(0, 10).map((number) => (
+        {pageNumbers.length > 0 && pageNumbers.slice(0, 10).map((number) => (
           <PaginationNumber
             key={number}
             onClick={() => onPageChange(parseInt(number))}
