@@ -1,7 +1,7 @@
 import { CartItem } from "@/types/cart"
 import { Comment, Product, Question } from "@/types/product"
 
-const url = 'https://turkcel-pasaj-database.vercel.app/'
+const url = 'https://turkcel-pasaj-database.vercel.app'
 
 export const fetchAllProducts = async () => {
     const response = await fetch(`${url}/products`)
