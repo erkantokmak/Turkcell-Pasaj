@@ -2,11 +2,11 @@ import ProductList from '@/components/Category/ProductList';
 import Slider from '@/components/Category/Slider';
 import CompareButton from '@/components/CompareMode/CompareButton';
 import CompareModal from '@/components/CompareMode/CompareModal';
-import Filter from '@/components/Filter';
+import FilterIndex from '@/components/Filter';
+
 import Pagination from '@/components/Filter/Pagination';
 import { useCompareStore } from '@/lib/compareStore';
 import { fetchProductsByCategory } from '@/lib/server';
-import { CompareModalContainer, CompareModalContent } from '@/styles/Compare';
 import { Column, Container, Row, Title } from '@/styles/Global';
 import { Product } from '@/types/product';
 import { dehydrate, QueryClient, useQuery } from '@tanstack/react-query';
@@ -143,7 +143,7 @@ const Category: React.FC<CategoryProps> = ({ slug  }) => {
       </Row>
       <Row justifyContent='center' alignItems='flex-start'>
         <Column xs={12} md={3} lg={3} justifyContent='flex-start' alignItems='flex-start'>
-          <Filter onFilterChange={handleFilterChange} data={data} />
+          <FilterIndex onFilterChange={handleFilterChange} data={data} />
         </Column>
         <Column xs={12} md={9} lg={9} justifyContent='0' alignItems='0'>
           <Row width='100%'>
