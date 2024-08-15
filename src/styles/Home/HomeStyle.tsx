@@ -39,3 +39,18 @@ display: flex;
 align-items: center;
 justify-content: center;
 `;
+
+export const BestSellerMenuItem = styled(Column)<{isActive: boolean}>`
+color: #253342;
+&:hover{
+color: #27356f;
+font-weight: 700;
+border-bottom: 4px solid #27356f;
+cursor: pointer;
+}
+${({ isActive }) => isActive && `
+color: #27356f;
+font-weight: 700;
+border-bottom: 4px solid #27356f;
+`}
+`;

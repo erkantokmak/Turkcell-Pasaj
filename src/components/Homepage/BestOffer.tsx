@@ -16,17 +16,17 @@ const BestOffer: React.FC<BestOfferProps> = ({ data }) => {
           En İyi Teklifler
         </Title>
       </Row>
-      <Row padding='50px 0 50px 0'>
+      <Row padding='40px 0'>
         <Swiper
           spaceBetween={10}
           breakpoints={
             {
               0: {
-                slidesPerView: 1,
+                slidesPerView: 1.5,
                 spaceBetween: 10
               },
               768: {
-                slidesPerView: 2,
+                slidesPerView: 3,
                 spaceBetween: 10
               },
               1024: {
@@ -39,12 +39,14 @@ const BestOffer: React.FC<BestOfferProps> = ({ data }) => {
               }
             }
           }
-          >
+        >
           {
-            data && data.filter((product: Product) => product.bestOffer === true)
-              .map((product: Product, index: number) => (
-                <SwiperSlide key={index}>
+            data && data.length > 0 && data.slice(0,4)
+            .map((product: Product, index: number) => (
+              <SwiperSlide key={index}>
+                <Row padding='10px 0'>
                   <SingleProduct product={product} />
+              </Row>
                 </SwiperSlide>
               ))}
         </Swiper>

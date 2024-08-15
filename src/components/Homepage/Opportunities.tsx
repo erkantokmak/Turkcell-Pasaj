@@ -82,7 +82,7 @@ const Opportunities = () => {
                         sliders.map(slider => (
                             <SwiperSlide key={slider.id}>
                                 <ImageWrapper width='280px' height='420px' radius='.625rem'>
-                                    <Image src={slider.image} alt='slider' fill objectFit='contain' />
+                                    <Image src={slider.image} alt='slider' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" fill style={{objectFit: 'contain'}} />
                                 </ImageWrapper>
                             </SwiperSlide>
                         ))

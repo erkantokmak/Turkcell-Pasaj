@@ -20,17 +20,15 @@ const Favorites = () => {
         <>
             <Container>
                 <Column padding='40px 0 0 0'>
-                    <Title fsize='34px' fcolor='#253342' fweight='700' lineHeight='1.24' textAlign='center'>
+                    <Title fsize='34px' fcolor='#253342' fweight='700' lineHeight='1.24' textAlign='center' margin='40px 0 0 0'>
                         Favori ürünleriniz
                     </Title>
                     {favorites?.length === 0 && <Title fsize='24px' fcolor='#253342' fweight='700' lineHeight='1.24' textAlign='center'>
                         Henüz favori ürününüz bulunmamaktadır.
                     </Title>}
                 </Column>
-                <Row margin='400px 0 80px 0'>
-                    
+                <Row margin='40px 0 80px 0'>
                     <Grid columns={4} gap='10px'>
-
                         {
                             favorites?.map((product: Product, index: number) => (
                                 <GridColumn key={index} >

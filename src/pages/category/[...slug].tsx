@@ -142,10 +142,10 @@ const Category: React.FC<CategoryProps> = ({ slug  }) => {
         <CompareButton handleModal={handleModal}/>
       </Row>
       <Row justifyContent='center' alignItems='flex-start'>
-        <Column xs={12} md={3} lg={3} justifyContent='flex-start' alignItems='flex-start'>
-          <FilterIndex onFilterChange={handleFilterChange} data={data} />
+        <Column xs={12} md={12} lg={3} justifyContent='flex-start' alignItems='flex-start'>
+          <FilterIndex onFilterChange={handleFilterChange} data={data}/>
         </Column>
-        <Column xs={12} md={9} lg={9} justifyContent='0' alignItems='0'>
+        <Column xs={12} md={12} lg={9} justifyContent='0' alignItems='0'>
           <Row width='100%'>
             <Slider />
           </Row>

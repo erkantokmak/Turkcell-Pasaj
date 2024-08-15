@@ -185,7 +185,7 @@ const Product: React.FC<ProductProps> = ({ slug }) => {
         <>
             <Container>
                 <Row justifyContent='space-between' alignItems='flex-start'>
-                    <Column xs={12} md={6} >
+                    <Column xs={12} md={12} lg={6} >
                         <Row style={{ width: "100%" }} >
                             <Swiper
                                 slidesPerView={1}
@@ -212,7 +212,7 @@ const Product: React.FC<ProductProps> = ({ slug }) => {
                             )}
                         </Row>
                     </Column>
-                    <Column xs={12} md={6} alignItems='flex-start' gap='20px'>
+                    <Column xs={12} md={12} lg={6} alignItems='flex-start' gap='20px'>
                         <Row padding='0'>
                             <Title fsize='42px' fcolor='#253342' fweight='700' lineHeight='1.22' textAlign='start'>
                                 {data?.name}

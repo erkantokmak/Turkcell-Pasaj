@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+import { Title } from '../Global';
 
 export const SingleProductWrap = styled.div<{isModalOpen: boolean}>`
 cursor: pointer;
+border: 2px solid transparent;
 &:hover {
     border-radius: .625rem;
     border: 2px solid;
@@ -28,7 +30,7 @@ export const ProductContent = styled(ProductWrapper)`
 padding: 1.5rem;
 box-shadow: none;
 width: 100%;
-height: 100%;
+max-height: 400px;
 `;
 
 
@@ -71,7 +73,7 @@ display: flex;
 justify-content: center;
 flex-direction: column;
 align-items:start;
-height: 90px;
+min-height: 70px;
 `;
 
 export const FavIcon = styled.div`

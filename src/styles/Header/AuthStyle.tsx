@@ -7,12 +7,18 @@ position: relative;
 
 export const AuthWrapper = styled.div`
   position: absolute;
-  top: 50px;
+  top: 124px;
   left: 0;
   width: 100%;
   min-height: 590px;
   background-color: white;
   z-index: 3;
+  @media (max-width: 768px) {
+    top: 285px;
+  }
+  @media (max-width: 576px) {
+    top: 0;
+  }
 `;
 
 export const AccountContainer = styled.div`

@@ -1,5 +1,5 @@
 import { Column, Container, ImageWrapper, Row } from '@/styles/Global'
-import { NavLink, NavWrapper } from '@/styles/Header/HeaderStyle'
+import { MiniMenu, NavLink, NavWrapper } from '@/styles/Header/HeaderStyle'
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
@@ -8,6 +8,7 @@ const TopHeader = () => {
     const router = useRouter();
     return (
         <>
+        <MiniMenu>
             <Container>
                 <Row padding='17px 0px'>
                     <Column xs={12} md={6} alignItems="flex-start" justifyContent='center'>
@@ -38,6 +39,7 @@ const TopHeader = () => {
                 <Row>
                 </Row>
             </Container>
+            </MiniMenu>
         </>
     )
 }

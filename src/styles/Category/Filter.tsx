@@ -1,5 +1,40 @@
 import styled from 'styled-components'
 
+export const FilterWrapper = styled.div`
+display: block;
+@media (max-width: 768px) {
+display: none;
+}
+`;
+
+export const FilterButton = styled.div`
+display: none;
+@media (max-width: 768px) {
+  display: block;
+}
+`;
+
+export const FilterModal = styled.div<{isOpen: boolean}>`
+position: relative;
+background-color: #f8f8f8;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+width: 100%;
+z-index: 999;
+${({isOpen}) => isOpen ? 'display: block;' : 'display: none;'}
+`;
+
+export const FilterModalContent = styled.div`
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+padding: 20px 0; 
+background-color: #fff;
+`;
+
 export const FilterCard = styled.div`
 border-radius: .625rem;
 background-color: #f5f7f9;

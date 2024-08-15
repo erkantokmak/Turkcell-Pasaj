@@ -1,10 +1,11 @@
 import { fetchAllProducts } from '@/lib/server';
 import { Column, Row } from '@/styles/Global';
-import { MenuItem, SubMenu, SubMenuItem } from '@/styles/Header/HeaderStyle';
+import { HamburgerIcon, MenuContainer, MenuItem, MenuItems, SubMenu, SubMenuItem } from '@/styles/Header/HeaderStyle';
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SingleProduct from '../Products/SingleProduct';
 import { Product } from '@/types/product';
+import { useRouter } from 'next/router';
 
 const Menu = () => {
     const menuItems: { [key: string]: { name: string, subcategories?: { [key: string]: string } } } = {
@@ -119,36 +120,57 @@ const Menu = () => {
         queryKey: ["products"],
         queryFn: fetchAllProducts,
     });
+    const router = useRouter();
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+    useEffect(() => {
+        setIsOpen(false);
+    }, [router.asPath]);
     return (
         <>
-            <Row>
-                {Object.entries(menuItems).map(([key, value]) => (
-                    <div key={key}>
-                        <MenuItem href={`/category/${key}`}>{value.name}</MenuItem>
-                        {value.subcategories && (
-                            <SubMenu>
-                                <Row alignItems='flex-start' justifyContent='flex-start'>
-                                    <Column xs={12} md={6} justifyContent='flex-start' alignItems='flex-start'>
-                                        {Object.entries(value.subcategories).map(([subKey, subValue]) => (
-                                            <SubMenuItem key={subKey} href={`/category/${key}/${subKey}`}>{subValue}</SubMenuItem>
-                                        ))}
-
-                                    </Column>
-                                    <Column xs={12} md={6}>
-                                        <Row gap='20px' margin='30px 0'>
-                                            {
-                                               data && data.length > 0 && data.slice(0, 2).map((item: Product) => (
-                                                    <SingleProduct key={item.id} product={item} />
-                                                ))
-                                            }
-                                        </Row>
-                                    </Column>
-                                </Row>
-                            </SubMenu>
-                        )}
-                    </div>
-                ))}
-            </Row>
+            <MenuContainer>
+                <Row >
+                    <HamburgerIcon isOpen={isOpen} onClick={toggleMenu}>
+                        <div />
+                        <div />
+                        <div />
+                    </HamburgerIcon>
+                </Row>
+                <MenuItems className='menu' isOpen={isOpen}>
+                    {Object.entries(menuItems).map(([key, value]) => (
+                        <div className="menuItem" key={key}>
+                            <MenuItem href={`/category/${key}`}>{value.name}</MenuItem>
+                            {!isOpen && (
+                                <>
+                                    {value.subcategories && (
+                                        <SubMenu className='subMenu'>
+                                            <Row alignItems='flex-start' justifyContent='flex-start'>
+                                                <Column xs={12} md={6} alignItems='flex-start'>
+                                                    {Object.entries(value.subcategories).map(([subKey, subValue]) => (
+                                                        <SubMenuItem key={subKey} href={`/category/${key}/${subKey}`}>
+                                                            {subValue}
+                                                        </SubMenuItem>
+                                                    ))}
+                                                </Column>
+                                                <Column xs={12} md={6}>
+                                                    <Row gap='20px' margin='30px 0'>
+                                                        {
+                                                            data && data.length > 0 && data.slice(0, 2).map((item: Product) => (
+                                                                <SingleProduct key={item.id} product={item} />
+                                                            ))
+                                                        }
+                                                    </Row>
+                                                </Column>
+                                            </Row>
+                                        </SubMenu>)}</>
+                            )}
+                        </div>
+                    ))}
+                </MenuItems>
+            </MenuContainer>
         </>
     );
 }

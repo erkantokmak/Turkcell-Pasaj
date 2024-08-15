@@ -6,6 +6,7 @@ import { Product } from '@/types/product'
 import Image from 'next/image'
 import { Navigation } from 'swiper/modules'
 import { StyledSwiper } from '@/styles/Slider'
+import { BestSellerMenuItem } from '@/styles/Home/HomeStyle'
 
 type BestSellersProps = {
   data: Product[]
@@ -66,12 +67,12 @@ const BestSellers: React.FC<BestSellersProps> = ({ data }) => {
           {
             categoryItems.map((item, index) => (
               <SwiperSlide key={index}>
-                <Column onClickCapture={() => setCurrentCategory(item.category)}>
-                  <ImageWrapper width='30px' height='20px'>
+                <BestSellerMenuItem onClickCapture={() => setCurrentCategory(item.category)} isActive={currentCategory === item.category}>
+                  <ImageWrapper width='40px' height='30px'>
                     <Image src={`/images/category/${item.image}`} alt={item.name} fill objectFit='contain' />
                   </ImageWrapper>
-                  <Title fsize='12px' fcolor='#253342' fweight='700' textAlign='center'>{item.name}</Title>
-                </Column>
+                  <Title fsize='16px' fweight='700' fcolor='#253342' textAlign='center' margin='10px 0 0 0' className='bestCategory'>{item.name}</Title>
+                </BestSellerMenuItem>
               </SwiperSlide>
             ))
           }

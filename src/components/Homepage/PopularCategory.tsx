@@ -1,7 +1,10 @@
 import { Column, Row, Title } from '@/styles/Global'
 import { CategoryImage, CategoryItem } from '@/styles/Home/HomeStyle'
+import { StyledSwiper } from '@/styles/Slider'
 import Image from 'next/image'
 import React from 'react'
+import { Navigation } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 const PopularCategory = () => {
 
@@ -56,9 +59,34 @@ const PopularCategory = () => {
                 </Title>
             </Row>
             <Row gap='20px' padding='20px 0px 30px 0px'>
+                <StyledSwiper
+                    spaceBetween={10}
+                    modules={[Navigation]}
+                    navigation
+                    breakpoints={
+                        {
+                            0: {
+                                slidesPerView: 3,
+                                spaceBetween: 10
+                            },
+                            768: {
+                                slidesPerView: 5,
+                                spaceBetween: 10
+                            },
+                            1024: {
+                                slidesPerView: 10,
+                                spaceBetween: 10
+                            },
+                            1200: {
+                                slidesPerView: 10,
+                                spaceBetween: 10
+                            }
+                        }
+                    }
+                >
                 {categories.map((category, index) => (
-                    <Row key={index}>
-                        <CategoryItem  alignItems='center' justifyContent='flex-start' xs={1} md={1} lg={1}>
+                    <SwiperSlide key={index}>
+                        <CategoryItem  alignItems='center' justifyContent='flex-start'>
                             <CategoryImage width='82px' height='82px' >
                                 <Image src={category.image} alt={category.name} fill objectFit='contain' />
                             </CategoryImage>
@@ -66,8 +94,9 @@ const PopularCategory = () => {
                                 {category.name}
                             </Title>
                         </CategoryItem>
-                    </Row>
+                    </SwiperSlide>
                 ))}
+                </StyledSwiper>
             </Row>
         </>
     )

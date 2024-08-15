@@ -125,7 +125,7 @@ const SingleProduct: React.FC<SingleProductProps> = ({ product }) => {
 
                     </Row>
 
-                    <Title fsize='18px' fcolor='#253342' fweight='700' lineHeight='1.22' textAlign='start'>
+                    <Title fsize='18px' fcolor='#253342' fweight='700' lineHeight='1.22' textAlign='start' className='CardText'>
                         {product?.name}
                     </Title>
                     <Row justifyContent='flex-start' padding='15px 0'>

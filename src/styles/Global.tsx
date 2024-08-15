@@ -13,6 +13,15 @@ position: relative;}
 .menuItem {
     text-decoration: none;
 }
+.CardText {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  line-height: 1.5; 
+  max-height: 3em; 
+}
 body {
   font-family: 'GreyCliffCF' , sans-serif;
   font-size: 16px;
@@ -160,7 +169,7 @@ grid-template-columns: repeat(${(props) => props.columns ? props.columns : 6}, 1
 gap: ${(props) => props.gap ? props.gap : '0px'};
 padding: ${(props) => props.padding ? props.padding : '0px'};
 @media (max-width: 768px) {
-grid-template-columns: repeat(2, 1fr);
+grid-template-columns: repeat(3, 1fr);
 }
 @media (max-width: 456px) {
 grid-template-columns: repeat(1, 1fr);
@@ -172,7 +181,7 @@ flex-basis: 0;
 flex-grow: 1;
 max-width: 100%;
 `;
-// padding: 0 .625rem;
+
 
 export const SocialIcon = styled(Link)`
 color: #fff;

@@ -19,12 +19,23 @@ position: relative;
 margin-left: 10px;
 @media (max-width: 768px) {
   margin-left: 0;
-
+  width: 100%;
 }
-@media (max-width: 456px) {
-  margin-left: 0;
-
+@media (max-width: 576px) {
+  margin-top: 30px;
 }
+`;
+
+export const SearchModal = styled.div`
+position: absolute;
+top: 100%;
+left: 0;
+right: 0;
+background-color: white;
+z-index: 1000;
+padding: 20px;
+border-bottom-left-radius: .625rem;
+border-bottom-right-radius: .625rem;
 `;
 
 export const IconWrapper = styled.div`
@@ -46,11 +57,11 @@ padding-left: 3rem;
 display:flex;
 color: #253342;
 @media (max-width: 768px) {
-    width: 20rem;
+    width: 100%;
 }
-@media (max-width: 456px) {
-    width: 15rem;
-} 
+@media (max-width: 576px) {
+    width: 100%;
+}
 `;
 
 export const LoginButton = styled.button`
@@ -61,6 +72,9 @@ color: #253342;
 background-color: #fff;
 font-size: 1rem;
 height: 3.75rem;
+@media (max-width: 768px) {
+  width: 100%;
+}
 `;
 
 export const RegisterButton = styled(LoginButton)`
@@ -100,6 +114,7 @@ padding: 10px 20px;
 line-height: 16px;
 font-weight: 500;
 display: flex;
+border-bottom: 2px solid transparent;
 &:hover{
 color: #ffc900;
 font-weight: 700;
@@ -112,6 +127,7 @@ export const SubMenu = styled.div`
   position: absolute;
   top: 100%;
   left: 0;
+  right: 0;
   width: 100%;
   min-height: 590px;
   background-color: white;
@@ -135,4 +151,59 @@ export const BreadCrumb = styled.div`
 background-color: #f8f8f8;
 padding: 10px 0;
 font-size: 14px;
+`;
+
+export const MiniMenu = styled.div`
+@media (max-width: 576px) {
+  display: none;
+}
+`;
+
+export const MenuContainer = styled.div`
+  position: relative;
+`;
+
+export const HamburgerIcon = styled.div<{ isOpen: boolean }>`
+  display: none;
+  cursor: pointer;
+  @media (max-width: 768px) {
+    display: block;
+  }
+  div {
+    width: 24px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  ${({ isOpen }) => isOpen && `
+    div:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    div:nth-child(2) {
+      opacity: 0;
+    }
+
+    div:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+  `}
+`;
+
+
+export const MenuItems = styled.div<{ isOpen: boolean }>`
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+  }
 `;
