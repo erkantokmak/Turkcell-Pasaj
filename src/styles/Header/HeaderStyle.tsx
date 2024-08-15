@@ -200,7 +200,7 @@ export const MenuItems = styled.div<{ isOpen: boolean }>`
   @media (max-width: 768px) {
     display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
     position: absolute;
-    top: 50px;
+    top: 30px;
     left: 0;
     width: 100%;
     background-color: white;

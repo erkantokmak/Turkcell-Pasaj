@@ -9,6 +9,7 @@ export const CompareModalContainer = styled.div`
   z-index: 1000;
   height: 15vh;
   background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   @media (max-width: 768px) {
     height: 40vh;
   }
@@ -20,6 +21,7 @@ export const CompareModalContainer = styled.div`
 export const CompareModalContent = styled.div`
 content: "";
 position: absolute;
+top: 25px;
 width: 100%;
 height: 90%;
 

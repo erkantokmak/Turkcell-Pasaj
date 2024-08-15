@@ -63,8 +63,9 @@ const Product: React.FC<ProductProps> = ({ slug }) => {
 
     const [selectedOptions, setSelectedOptions] = useState<{ [key: string]: string }>({});
     const [isOpen, setIsOpen] = useState<{ [key: string]: boolean }>({});
-    const [isFavorite, setIsFavorite] = React.useState<boolean>(false);
+    const [isFavorite, setIsFavorite] = React.useState<boolean>();
     const [isActive, setIsActive] = React.useState<boolean>(true);
+
     const { mutate } = useMutation({
         mutationFn: ({ uid, cart }: { uid: string, cart: CartItem[] }) => updateUserBasket({ uid, cart }),
         onSuccess: () => {
@@ -158,11 +159,14 @@ const Product: React.FC<ProductProps> = ({ slug }) => {
             const existingFavorite = favorites.find(fav => fav.id === data?.id);
             let updatedFavorites: Product[];
             if (existingFavorite) {
-                toast.info('Ürün favorilerden kaldırıldı');
                 updatedFavorites = favorites.filter(fav => fav.id !== data?.id);
             } else {
-                toast.success('Ürün favorilere eklendi');
                 updatedFavorites = [...favorites, product];
+            }
+            if(isFavorite) {
+                toast.success('Ürün favorilerden çıkarıldı');
+            } else {
+                toast.success('Ürün favorilere eklendi');
             }
             setIsFavorite(!isFavorite);
             mutateFav({ uid: uid, favorite: updatedFavorites });

@@ -88,7 +88,7 @@ const SingleProduct: React.FC<SingleProductProps> = ({ product }) => {
         <SingleProductWrap isModalOpen={isModalOpen}
         onClickCapture={handleCompareClick} style={{ cursor: isModalOpen ? 'pointer' : 'default' }}
         >
-            <ProductWrapper>
+            <ProductWrapper isModalOpen={isModalOpen}>
                 <ProductContent>
                     {
                         product?.bestSeller && (

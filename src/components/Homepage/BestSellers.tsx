@@ -78,6 +78,8 @@ const BestSellers: React.FC<BestSellersProps> = ({ data }) => {
           }
         </StyledSwiper>
       </Row>
+      <Row>
+
       <Grid columns={4} gap='20px'>
         {filteredData.length > 0 && filteredData.slice(0, 8).map((product: Product, index: number) => (
           <GridColumn  key={index} >
@@ -85,6 +87,7 @@ const BestSellers: React.FC<BestSellersProps> = ({ data }) => {
           </GridColumn>
         ))}
       </Grid>
+        </Row>
     </>
   )
 }

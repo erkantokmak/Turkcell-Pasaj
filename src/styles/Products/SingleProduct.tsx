@@ -11,16 +11,18 @@ border: 2px solid transparent;
 }
 `;
 
-export const ProductWrapper = styled.div`
+export const ProductWrapper = styled.div<{isModalOpen: boolean}>`
 position: relative;
 border-radius: .625rem;
 width: 280px;
 height: 470px;
 background-color: #fff;
+transition: all 0.3s ease-in-out;
 display: flex;
 flex-direction: column;
 position: relative;
-box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
+/* box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1); */
+box-shadow: ${(props) => props.isModalOpen ? '0 0 1rem 0 rgba(0, 0, 0, 0.5)' : '0 0 1rem 0 rgba(0, 0, 0, 0.1)'};
 @media (max-width: 768px) {
     width: 200px;
 }
