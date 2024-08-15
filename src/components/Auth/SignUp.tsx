@@ -12,9 +12,9 @@ import { addUserToDB } from '@/lib/server';
 import { toast } from 'react-toastify';
 
 const registerSchema = z.object({
-  email: z.string().email('Invalid email address'),
-  password: z.string().min(6, 'Password must be at least 6 characters'),
-  confirmPassword: z.string().min(6, 'Password must be at least 6 characters'),
+  email: z.string().email('E-posta adresi geçerli değil'),
+  password: z.string().min(6, 'Parola en az 6 karakter olmalıdır'),
+  confirmPassword: z.string().min(6, 'Parola en az 6 karakter olmalıdır'),
 }).refine((data) => data.password === data.confirmPassword, {
   path: ['confirmPassword'],
   message: 'Passwords do not match',

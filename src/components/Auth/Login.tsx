@@ -1,16 +1,15 @@
 // components/LoginForm.tsx
-import { set, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { signIn } from 'next-auth/react';
-import { useRouter } from 'next/router';
 import { AuthButton, AuthInput } from '@/styles/Header/AuthStyle';
-import { Column, Row, YellowButton } from '@/styles/Global';
+import { Column } from '@/styles/Global';
 import { toast } from 'react-toastify';
 
 const loginSchema = z.object({
-    email: z.string().email('Invalid email address'),
-    password: z.string().min(6, 'Password must be at least 6 characters'),
+    email: z.string().email('E-Posta adresi geçerli değil'),
+    password: z.string().min(6, 'Parola en az 6 karakter olmalıdır'),
 });
 
 type LoginSchema = z.infer<typeof loginSchema>;
@@ -23,7 +22,7 @@ const Login: React.FC<LoginProps> = ({isModalOpen, setModalOpen}) => {
     const { register, handleSubmit, formState: { errors } } = useForm<LoginSchema>({
         resolver: zodResolver(loginSchema),
     });
-    const router = useRouter();
+
 
 
     const onSubmit = async (data: LoginSchema) => {

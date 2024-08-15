@@ -20,6 +20,16 @@ const Breadcumb = () => {
                                     <NavLink href='/category/cep-telefonu'>Ürünler</NavLink>
                                 )
                             }
+                            {
+                                router.pathname === '/product/[...slug]' && (
+                                    <>
+                                    <Title fcolor='#ffc900' fsize='13px' fweight='700' margin='0 3px'>{'>'}</Title>
+                                    <NavLink href='/category/cep-telefonu'>Ürünler</NavLink>
+                                    <Title fcolor='#ffc900' fsize='13px' fweight='700' margin='0 3px'>{'>'}</Title>
+                                    <NavLink href='/product/1'>Ürün Detay</NavLink>
+                                    </>
+                                )
+                            }
 
                         </Row>
                     )

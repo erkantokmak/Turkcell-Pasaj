@@ -11,7 +11,7 @@ type FilterProps = {
   onFilterChange: (filterName: string, value: any) => void,
 }
 
-const FilterIndex: React.FC<FilterProps> = ({data, onFilterChange},categoryName) => {
+const FilterIndex: React.FC<FilterProps> = ({data, onFilterChange}) => {
   return (
     <>
     <Column gap='20px' padding='0' margin='0'>
