@@ -159,6 +159,13 @@ export const MiniMenu = styled.div`
 }
 `;
 
+export const MobileMenu = styled.div`
+display: none;
+@media (max-width: 576px) {
+  display: block;
+}
+`;
+
 export const MenuContainer = styled.div`
   position: relative;
 `;

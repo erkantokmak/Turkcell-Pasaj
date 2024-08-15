@@ -1,5 +1,5 @@
 import { ImageWrapper, Row, Title } from '@/styles/Global'
-import { StyledSwiper } from '@/styles/Slider'
+import { StyledSwiper, StyledSwiperSlide } from '@/styles/Slider'
 import Image from 'next/image'
 import React from 'react'
 import { Navigation } from 'swiper/modules'
@@ -80,11 +80,11 @@ const Opportunities = () => {
                 >
                     {
                         sliders.map(slider => (
-                            <SwiperSlide key={slider.id}>
+                            <StyledSwiperSlide key={slider.id}>
                                 <ImageWrapper width='280px' height='420px' radius='.625rem'>
                                     <Image src={slider.image} alt='slider' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" fill style={{objectFit: 'contain'}} />
                                 </ImageWrapper>
-                            </SwiperSlide>
+                            </StyledSwiperSlide>
                         ))
                     }
                 </StyledSwiper>

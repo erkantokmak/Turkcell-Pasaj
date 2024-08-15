@@ -31,4 +31,8 @@ background-image : url('${(props) => props.background}');
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
+@media (max-width: 576px) {
+    background-size: cover;
+    width: 400px;
+}
 `;

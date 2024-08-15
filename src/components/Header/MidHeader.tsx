@@ -49,14 +49,14 @@ const MidHeader = () => {
                                     <ModalCloseButton onClick={() => setModalOpen(!isModalOpen)}>&times;</ModalCloseButton>
                                 </Row>
                                 <Row alignItems='flex-start' margin='30px 0 '>
-                                    <Column width='50%'>
+                                    <Column xs={12} md={6}>
                                         <ImageWrapper width='348px' height='203px'>
                                             <Image src="/images/login-image.webp" alt='Login Image' fill objectFit='contain' />
                                         </ImageWrapper>
                                         <Title fsize='24px' fcolor='#253342' fweight='700' margin='20px 0 0 0' textAlign='start'>Turkcell Pasaj’ın fırsatlarla dolu dünyasına hoş geldiniz!</Title>
                                         <Title fsize='14px' fcolor='#253342' fweight='500' margin='20px 0 0 0' textAlign='start'>Turkcell Pasaj’da fırsatlar bitmez! İhtiyacınız olan bir çok ürüne, güvenli ve esnek ödeme seçenekleri ile hem de kredi kartı limitinize takılmadan sahip olabilirsiniz. Favorilediğiniz ürünler için bilgilendirmelerden, siparişlerinizle ilgili tüm işlemlere ve daha da fazlasına kolaylıkla erişim sağlayabilirsiniz.</Title>
                                     </Column>
-                                    <Column width='50%' alignItems='flex-start'>
+                                    <Column xs={12} md={6} alignItems='flex-start'>
                                         <Title fsize='24px' fcolor='#253342' fweight='700' margin='0 0 20px 0' textAlign='start'>Giriş</Title>
                                         <Title fsize='14px' fcolor='#253342' fweight='500' margin='0 0 20px 0' textAlign='start'>Size özel ödeme avantajları ve size özel tekliflerden faydalanmak için Giriş Yap/Üye Ol seçeneği ile devam edebilirsiniz.</Title>
                                         <YellowButton display='block' width='100%'><Title fsize='24px' onClick={() => setIsLogin(!isLogin)}>Giriş Yap / Üye Ol</Title></YellowButton>

@@ -22,6 +22,12 @@ position: relative;}
   line-height: 1.5; 
   max-height: 3em; 
 }
+.sliderImage {
+  object-fit: contain;
+  @media (max-width: 768px) {
+    object-fit: cover;
+  }
+}
 body {
   font-family: 'GreyCliffCF' , sans-serif;
   font-size: 16px;
@@ -154,6 +160,9 @@ display: inline-block;
 width: ${(props) => props.width ? props.width : ''};
 height: ${(props) => props.height ? props.height : ''};
 border-radius: ${(props) => props.radius ? props.radius : '0px'};
+`;
+
+export const CampaignImage = styled(ImageWrapper)`
 @media (max-width: 768px) {
 width: 100%;
 }

@@ -100,7 +100,7 @@ const Slider = () => {
                                     sliders.map(slider => (
                                         <SwiperSlide key={slider.id}>
                                             <ImageWrapper width='1200px' height='550px'>
-                                                <Image src={slider.image} alt='slider' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" fill />
+                                                <Image src={slider.image} alt='slider' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" fill className='sliderImage' />
                                             </ImageWrapper>
                                         </SwiperSlide>
                                     ))

@@ -52,7 +52,7 @@ const SignUp = () => {
     <>
    
     <form onSubmit={handleSubmit(onSubmit)}>
-    <Column gap='5px'>
+    <Column gap='5px' padding='20px 0'>
       <AuthInput
         type="email"
         placeholder="Email"
