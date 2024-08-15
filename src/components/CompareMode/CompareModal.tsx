@@ -9,10 +9,8 @@ import React from 'react'
 
 const CompareModal = () => {
     const { selectedProducts, clearProducts, toggleModal } = useCompareStore();
-    const isModalOpen = useCompareStore((state) => state.isModalOpen);
     const removeProduct = useCompareStore((state) => state.removeProduct);
     const router = useRouter();
-    console.log(selectedProducts);
 
     const handleCompare = () => {
         toggleModal();

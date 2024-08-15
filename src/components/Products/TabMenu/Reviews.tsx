@@ -8,6 +8,7 @@ import { FaCheckCircle } from 'react-icons/fa'
 import { useSession } from 'next-auth/react'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { Comment } from '@/types/product'
+import { toast } from 'react-toastify'
 
 type ReviewsProps = {
   data: Product
@@ -29,8 +30,7 @@ const Reviews: React.FC<ReviewsProps> = ({ data }) => {
   const { mutate } = useMutation({
     mutationFn: () => fetchProductQuestions(data.id as string),
     onSuccess: () => {
-        // mesaj ekle
-        console.log("başarılı")
+        toast.success("Yorumunuz başarıyla gönderildi.")
         queryClient.invalidateQueries({ queryKey: ['product'] })
     }
 })
@@ -45,9 +45,7 @@ const handleSubmit = async () => {
     like: 0, 
     date: new Date().toLocaleDateString()
   };
-  console.log("reviewData", reviewData);
   const reviews: Comment[] = [...data.comments, reviewData];
-  console.log("reviews", reviews);
   if (review && rating) {
     try {
       await submitReview({ id: data.id, reviews: reviews });
@@ -56,7 +54,7 @@ const handleSubmit = async () => {
       setRating(0); 
       mutate();
     } catch (error) {
-      console.log("error", error);
+      toast.error('Yorum gönderilirken bir hata oluştu.')
     }
   }
 };
@@ -104,8 +102,7 @@ const handleSubmit = async () => {
                 if(uid){
                   setModalOpen(true)
                 } else {
-                  //mesaj ekle
-                  alert("Yorum yapabilmek için giriş yapmalısınız.")
+                  toast.info("Yorum yapabilmek için giriş yapmalısınız.")
                 }
               }}>Yorum Yaz</BlueButton>
             </Row>

@@ -41,7 +41,6 @@ const SingleProduct: React.FC<SingleProductProps> = ({ product }) => {
     const { mutate } = useMutation({
         mutationFn: ({ uid, favorite }: { uid: string, favorite: Product[] }) => updateUserFavorites({ uid, favorite }),
         onSuccess: () => {
-            // alert
             queryClient.invalidateQueries({ queryKey: ['favorites'] })
         }
     })
@@ -56,6 +55,7 @@ const SingleProduct: React.FC<SingleProductProps> = ({ product }) => {
                 toast.success('Ürün favorilerden kaldırıldı');
                 updatedFavorites = favorites.filter(fav => fav.id !== product.id);
             } else {
+                toast.success('Ürün favorilere eklendi');
                 updatedFavorites = [...favorites, product];
             }
             mutate({ uid: id, favorite: updatedFavorites });

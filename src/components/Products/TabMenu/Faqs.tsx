@@ -52,7 +52,7 @@ const Faqs: React.FC<FaqsProps> = ({ data }) => {
         setQuestion('');
         mutate();
       } catch (error) {
-        console.log("error", error);
+        toast.error('Soru gönderilirken bir hata oluştu.')
       }
     }
   };
@@ -99,8 +99,7 @@ const Faqs: React.FC<FaqsProps> = ({ data }) => {
               if (uid) {
                 setModalOpen(true)
               } else {
-                // mesaj yazılacak
-                alert("Soru sormak için giriş yapmalısınız.")
+                toast.info('Soru sormak için giriş yapmalısınız.')
               }
             }}>Satıcıya Sor</BlueButton>
           </Row>

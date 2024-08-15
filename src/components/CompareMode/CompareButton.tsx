@@ -7,8 +7,7 @@ type CompareButtonProps = {
 }
 const CompareButton: React.FC<CompareButtonProps> = ({handleModal}) => {
   const handleChange = () => {
-    console.log('Checkbox changed!');
-    handleModal();  // Fonksiyonu burada çağırıyoruz
+    handleModal();
   }
   return (
     <>
