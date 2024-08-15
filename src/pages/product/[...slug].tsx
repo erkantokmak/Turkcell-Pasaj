@@ -52,6 +52,7 @@ const Product: React.FC<ProductProps> = ({ slug }) => {
     const { data: cart } = useQuery<CartItem[]>({
         queryKey: ['cart'],
         queryFn: () => fetchCartById(uid),
+        enabled: !!uid
     })
 
     const { data: favorites } = useQuery<Product[]>({
