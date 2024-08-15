@@ -90,7 +90,7 @@ const SingleProduct: React.FC<SingleProductProps> = ({ product }) => {
         onClickCapture={handleCompareClick} style={{ cursor: isModalOpen ? 'pointer' : 'default' }}
         >
             <ProductWrapper isModalOpen={isModalOpen}>
-                <ProductContent>
+                <ProductContent isModalOpen={isModalOpen} >
                     {
                         product?.bestSeller && (
                             <ProductTag fsize='12px' fcolor='#fff' bgColor='#00e90a'>Çok Satanlar</ProductTag>
