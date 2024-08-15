@@ -35,7 +35,8 @@ const SingleProduct: React.FC<SingleProductProps> = ({ product }) => {
     const id = (session?.user as { id: string })?.id
     const { data: favorites } = useQuery<Product[]>({
         queryKey: ['favorites'],
-        queryFn: () => fetchFavoritesById(id)
+        queryFn: () => fetchFavoritesById(id),
+        enabled: !!id
     })
 
     const { mutate } = useMutation({

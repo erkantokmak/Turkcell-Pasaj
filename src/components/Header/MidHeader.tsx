@@ -23,12 +23,13 @@ const MidHeader = () => {
     const [isRegister, setIsRegister] = useState<boolean>(false);
     const [isSearch, setIsSearch] = useState<boolean>(false);
     const [searchValue, setSearchValue] = useState<string>('');
-
+    const id = (session?.user as { id: string })?.id;
     const router = useRouter();
 
     const { data: cart } = useQuery({
         queryKey: ['cart'],
         queryFn: () => fetchCartById((session?.user as { id: string })?.id),
+        enabled: !!id
     })
 
     const { data: products} = useQuery({
