@@ -21,6 +21,7 @@ transition: all 0.3s ease-in-out;
 display: flex;
 flex-direction: column;
 position: relative;
+cursor: pointer;
 /* box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1); */
 box-shadow: ${(props) => props.isModalOpen ? '0 0 1rem 0 rgba(0, 0, 0, 0.5)' : '0 0 1rem 0 rgba(0, 0, 0, 0.1)'};
 @media (max-width: 768px) {

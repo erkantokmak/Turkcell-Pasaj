@@ -12,7 +12,7 @@ const TopHeader = () => {
             <MiniMenu>
                 <Container>
                     <Row padding='17px 0px'>
-                        <Column xs={12} md={6} alignItems="flex-start" justifyContent='center'>
+                        <Column xs={12} md={2} alignItems="flex-start" justifyContent='center'>
                             <NavLink href="/">
                                 <Row margin='0px 10px 0px 0px'>
                                     <ImageWrapper width='32px' height='32px'>
@@ -22,7 +22,7 @@ const TopHeader = () => {
                                 </Row>
                             </NavLink>
                         </Column>
-                        <Column xs={12} md={6} alignItems="flex-end" justifyContent='center'>
+                        <Column xs={12} md={10} alignItems="flex-end" justifyContent='center'>
                             <NavWrapper>
                                 <NavLink href="/favorites">Favorilerim</NavLink>
                                 <NavLink href="/campaigns">Kampanyalar</NavLink>

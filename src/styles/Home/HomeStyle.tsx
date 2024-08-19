@@ -42,6 +42,11 @@ justify-content: center;
 
 export const BestSellerMenuItem = styled(Column)<{isActive: boolean}>`
 color: #253342;
+width: 200px;
+@media (max-width: 576px){
+width: 150px;
+height: 100px;
+}
 &:hover{
 color: #27356f;
 font-weight: 700;

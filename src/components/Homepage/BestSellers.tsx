@@ -46,7 +46,7 @@ const BestSellers: React.FC<BestSellersProps> = ({ data }) => {
           breakpoints={
             {
               0: {
-                slidesPerView: 3,
+                slidesPerView: 2,
                 spaceBetween: 5
               },
               768: {
@@ -64,10 +64,11 @@ const BestSellers: React.FC<BestSellersProps> = ({ data }) => {
             }
           }
         >
+          <Row alignItems='flex-start' justifyContent='flex-start'>
           {
             categoryItems.map((item, index) => (
               <SwiperSlide key={index}>
-                <BestSellerMenuItem onClickCapture={() => setCurrentCategory(item.category)} isActive={currentCategory === item.category}>
+                <BestSellerMenuItem onClickCapture={() => setCurrentCategory(item.category)} isActive={currentCategory === item.category} justifyContent='flex-start'>
                   <ImageWrapper width='40px' height='30px'>
                     <Image src={`/images/category/${item.image}`} alt={item.name} fill objectFit='contain' />
                   </ImageWrapper>
@@ -76,6 +77,7 @@ const BestSellers: React.FC<BestSellersProps> = ({ data }) => {
               </SwiperSlide>
             ))
           }
+          </Row>
         </StyledSwiper>
       </Row>
       <Row>

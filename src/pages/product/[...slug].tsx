@@ -189,7 +189,7 @@ const Product: React.FC<ProductProps> = ({ slug }) => {
     return (
         <>
             <Container>
-                <Row justifyContent='space-between' alignItems='flex-start'>
+                <Row justifyContent='space-between' alignItems='flex-start' margin='80px 0'>
                     <Column xs={12} md={12} lg={6} >
                         <Row style={{ width: "100%" }} >
                             <Swiper

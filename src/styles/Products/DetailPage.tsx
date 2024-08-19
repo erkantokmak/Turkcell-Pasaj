@@ -155,8 +155,11 @@ line-height: 1.33;
 text-align: center;
 padding: 1.25rem;
 text-decoration: none;
+cursor: pointer;
 color: ${(props) => props.active ? '#2855AC' : '#5f6b76'};
 border-bottom: 2px solid ${(props) => props.active ? '#2855AC' : 'transparent'};
+width: 100%;
+height: 60px;
 &::after {
 align-items: center;
 content: "";
